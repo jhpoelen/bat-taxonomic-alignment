@@ -18,9 +18,7 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 {%- assign BTA = site.data.names | first | map: "treatmentId" | split: "sha256/" | last | slice: 0,8 | prepend: "BTA@" %}
 
-
-
-Do you have questions or suggestions? Please [edit this page](https://github.com/jhpoelen/bat-taxonomic-alignment/edit/main/index.md), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue](https://github.com/jhpoelen/bat-taxonomic-alignment/issues/new).
+Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_url }}), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue]({{ site.new_issue_url }}).
 
 <table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and JSON-L formats.</em></caption><thead><th>name</th><th>description</th></thead>
 <tbody>
@@ -55,7 +53,7 @@ Do you have questions or suggestions? Please [edit this page](https://github.com
 
 
 <table>
-  <caption>Table 3. <em>{{ BTA }} treatments, agreement index, and their associated names. The agreement index is ratio of the number of pairwise agreements for a concept versus the total number of possible pairwise agreements. Yellow/light colors indicate more agreement, green/dark shades indicate less agreement. Download table (minus agreement index) as <a href="https://raw.githubusercontent.com/jhpoelen/bat-taxonomic-alignment/main/_data/names.tsv">tsv</a>, <a href="https://raw.githubusercontent.com/jhpoelen/bat-taxonomic-alignment/main/_data/names.csv">csv</a>, or <a href="https://raw.githubusercontent.com/jhpoelen/bat-taxonomic-alignment/main/_data/names.json">json</a>.</em></caption>
+  <caption>Table 3. <em>{{ BTA }} treatments, agreement index, and their associated names. The agreement index is ratio of the number of pairwise agreements for a concept versus the total number of possible pairwise agreements. Yellow/light colors indicate more agreement, green/dark shades indicate less agreement. Download table (minus agreement index) as <a href="{{ "/names.tsv" | prepend: site.data_url }}">tsv</a>, <a href="{{ "/names.csv" | prepend: site.data_url }}">csv</a>, or <a href="{{ "/names.json" | prepend: site.data_url }}">json</a>.</em></caption>
   <thead><th>treatmentId</th><th>agreementIndex</th><th>name</th><th>accordingTo</th></thead>
   <tbody>
 {%- for name in site.data.names %}

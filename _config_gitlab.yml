@@ -1,0 +1,4 @@
+theme: minima
+data_url: https://gitlab.com/bat-eco-interactions/bat-taxonomic-alignment/-/raw/main/_data
+new_issue_url: https://gitlab.com/bat-eco-interactions/bat-taxonomic-alignment/-/issues/new
+edit_page_url: https://gitlab.com/bat-eco-interactions/bat-taxonomic-alignment/-/blob/main/README.md?ref_type=heads#modal-confirm-fork-edit

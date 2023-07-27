@@ -1,1 +1,4 @@
 theme: minima
+data_url: https://raw.githubusercontent.com/jhpoelen/bat-taxonomic-alignment/main/_data
+new_issue_url: https://github.com/jhpoelen/bat-taxonomic-alignment/issues/new
+edit_page_url: https://github.com/jhpoelen/bat-taxonomic-alignment/edit/main/index.md
