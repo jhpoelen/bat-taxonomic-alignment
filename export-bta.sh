@@ -3,8 +3,8 @@
 #
 
 exportTSV() {
- preston cat hash://sha256/26d368c772f240d65645248caa56dabae5cb2414ac57e8f0438d4c3dcf62e377\
- | tail -n+2
+ preston alias "urn:example:bta.tsv"\
+ | preston cat
 } 
 
 exportTSV\
