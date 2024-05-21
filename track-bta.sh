@@ -13,5 +13,6 @@ set -xe
 
 echo\
  "curl https://zenodo.org/records/11193643/files/BTA_Version0.4_TSV\
+ | tail -n+2\
  | tr '\r' ' ' "\
  | preston bash 
