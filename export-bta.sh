@@ -4,7 +4,8 @@
 
 exportTSV() {
  preston alias "urn:example:bta.tsv"\
- | preston cat
+ | preston cat\
+ | tail -n+2
 } 
 
 exportTSV\
@@ -17,4 +18,6 @@ exportTSV\
 exportTSV\
  | mlr --itsvlite --ojsonl cat\
  > bta.json
- 
+
+preston alias "urn:example:bta.xlsx"\
+ > bta.xlsx
