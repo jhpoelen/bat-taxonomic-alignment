@@ -14,9 +14,7 @@ set -xe
 #
 # version carriage return script 
 #
-echo\
- tail -n+2\
- | tr '\r' ' ' "\
+echo "tr '\r' ' '"\
  | preston track
 
 latest_version() {
@@ -26,21 +24,24 @@ latest_version() {
   | head -1
 }
 
-SCRIPT_ID=latest_version
+SCRIPT_ID=$(latest_version)
 
 #
 # version BTA 
 # 
+preston track https://zenodo.org/records/11193643/files/BTA_Version0.4.xlsx
+preston alias "urn:example:bta.xlsx" "$(latest_version)"
+
 preston track https://zenodo.org/records/11193643/files/BTA_Version0.4_TSV
 
-BTA_ID=latest_version
+BTA_ID=$(latest_version)
 
 #
 # transform BTA version using script
 #
-preston cat ${BTA_ID}\
+preston cat "$(latest_version)"\
  | preston bash -c "${SCRIPT_ID}"
 
-BTA_TSV_ID=latest_version
+BTA_TSV_ID=$(latest_version)
 
 preston alias "urn:example:bta.tsv" ${BTA_TSV_ID}
