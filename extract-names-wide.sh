@@ -7,11 +7,12 @@
 
 set -xe
 
-COMPLETE_TSV_HASH=hash://sha256/26d368c772f240d65645248caa56dabae5cb2414ac57e8f0438d4c3dcf62e377
+COMPLETE_TSV_HASH=$(preston ls -l tsv | grep hasVersion | grep "urn:example:bta.tsv" | cut -f3)
 
 NAME_COLUMN_PATTERN='^Name[_\s][0-9a-zA-Z]+'
 
 preston cat ${COMPLETE_TSV_HASH}\
+ | sed -E 's/^name_MSW3\tname_HMW\tname_BatNames\tname_MDD\tname_IUCN\tname_BatNames_2023\tname_MDD_2023/Name_MSW3\tName_HMW\tName_BatNames\tName_MDD\tName_IUCN\tName_BatNames_2023\tName_MDD_2023/g'\
  | nl\
  | tail -n+2\
  | sed -E "s/^\s+//g"\

@@ -7,12 +7,12 @@ layout: home
 # A Standardized Review of Bat Names Across Multiple Taxonomic Authorities
 
 Cite as: 
-> Sherman, Aja, Geiselman, Cullen, Poelen, Jorrit, Simmons, Nancy, Reeder, DeeAnn, Upham, Nathan, & Phelps, Kendra. (2023). A Standardized Review of Bat Names Across Multiple Taxonomic Authorities (0.1) [Data set]. Zenodo. (https://zenodo.org/record/8423306)
+> Sherman, A., Geiselman, C., Poelen, J., Simmons, N., Reeder, D., Upham, N., Phelps, K., & Agosti, D. (2024). A Standardized Review of Bat Names Across Multiple Taxonomic Authorities [Data set]. Zenodo. (https://doi.org/10.5281/zenodo.11193643)
+
 
 The taxonomic boundaries of species and higher-level taxa change relatively frequently as knowledge of population structure and evolutionary relationships improves, and older hypotheses are reframed. For the order Chiroptera (bats), valid names have long been assessed by multiple authorities, but differences among the resulting classifications largely remain unharmonized amongst authorities. We collected and aligned treatments across three primary taxonomic authorities for Chiroptera to create a single dynamic and versioned name translation tool. The resulting Bat Taxonomy Alignment will expedite future taxonomic assessments. The complexities uncovered in this alignment suggest the need for more explicit tracking of taxonomic concepts and usage of names in the future, particularly since biodiversity data (including hosts of zoonotic diseases) are cataloged and tracked using taxonomic names.
 
-New Verion 0.2!! https://zenodo.org/record/8423306
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7915722.svg)](https://doi.org/10.5281/zenodo.7915722) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11193643.svg)](https://doi.org/10.5281/zenodo.11193643) 
 
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8/)](https://archive.softwareheritage.org/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8;origin=https://github.com/jhpoelen/bat-taxonomic-alignment;visit=swh:1:snp:ed17e4d64ad333b0285669fd632ea53c84fd3d16;anchor=swh:1:rev:380935f37f3a4783ace2239baeb626d40366c669)
 
@@ -63,7 +63,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 {%- assign color = colors[backgroundColorId] %}
 {%- assign conceptId = conceptId | prepend: "BTA_" %}
     <tr id="{{ conceptId }}" style="background-color: {{ color }};">
-<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName }}</em></td><td> {{ name.accordingTo }}</td>
+<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName | escape }}</em></td><td> {{ name.accordingTo }}</td>
     </tr>
 {%- endfor %}
   </tbody>

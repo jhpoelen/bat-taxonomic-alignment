@@ -1,0 +1,22 @@
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#SoftwareAgent> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<https://preston.guoda.bio> <http://purl.org/dc/terms/description> "Preston is a software program that finds, archives and provides access to biodiversity datasets."@en <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <http://purl.org/dc/terms/description> "Executes script and captures stdout"@en <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <http://www.w3.org/ns/prov#startedAtTime> "2024-05-21T22:52:10.921Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <http://www.w3.org/ns/prov#wasStartedBy> <https://preston.guoda.bio> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/ns/prov#usedBy> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Software> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<https://doi.org/10.5281/zenodo.1410543> <http://purl.org/dc/terms/bibliographicCitation> "Jorrit Poelen, Icaro Alzuru, & Michael Elliott. 2021. Preston: a biodiversity dataset tracker (Version 0.8.6-SNAPSHOT) [Software]. Zenodo. https://doi.org/10.5281/zenodo.1410543"@en <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://purl.org/dc/terms/description> "A biodiversity dataset graph archive."@en <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<hash://sha256/46ebf4009ed45262e7759ec6008ac4cc1efc76f2e9a443c67b397b156ccfc4e8> <http://www.w3.org/ns/prov#usedBy> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<hash://sha256/a317c037766259633cecfb46dd93605dae46aca56dddd09b4bbac766fa6764af> <http://purl.org/dc/elements/1.1/format> "text/x-shellscript" .
+<urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> <http://www.w3.org/ns/prov#used> <hash://sha256/a317c037766259633cecfb46dd93605dae46aca56dddd09b4bbac766fa6764af> .
+<urn:uuid:1dfdf8e1-1233-4fdb-abfa-6031ce03b510> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:uuid:388d89bc-5bbc-404b-a4cc-d3f5430cc5ab> .
+<hash://sha256/87c862c149f6a33c7d8c344568a9a7f80310cbeed324395aa94fff2d5248a3e6> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
+<hash://sha256/87c862c149f6a33c7d8c344568a9a7f80310cbeed324395aa94fff2d5248a3e6> <http://www.w3.org/ns/prov#qualifiedGeneration> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
+<urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> <http://www.w3.org/ns/prov#generatedAtTime> "2024-05-21T22:52:11.778Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
+<urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
+<urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> <http://www.w3.org/ns/prov#used> <urn:uuid:1dfdf8e1-1233-4fdb-abfa-6031ce03b510> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
+<urn:uuid:1dfdf8e1-1233-4fdb-abfa-6031ce03b510> <http://purl.org/pav/hasVersion> <hash://sha256/87c862c149f6a33c7d8c344568a9a7f80310cbeed324395aa94fff2d5248a3e6> <urn:uuid:b15d8aaa-b490-4e5b-89d8-5e668774c6bc> .
