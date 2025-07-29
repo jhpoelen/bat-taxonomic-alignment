@@ -24,7 +24,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 <tbody>
     <tr><td><a href="./bta.xlsx">bta.xlsx</a></td><td>in proprietary Excel format.</td></tr>
     <tr><td><a href="https://docs.google.com/spreadsheets/d/1MhHVVw5HZ6KvQj_hje-UmBxMe0k_yLo-3z-YLCtxfks">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
-    <tr><td><a _href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.tsv</s></a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
+    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.tsv</s></a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
     <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.csv</s></a></td><td>as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Separated Values</a></td></tr>
     <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.json</s></a></td><td>as <a href="https://jsonlines.org/">JSON Lines</a> format</td></tr>
 
@@ -111,7 +111,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
         .keys(concept)
-        .filter(function(key) { return key.match(/^.*name_.*/) != null; })
+        .filter(function(key) { return key.match(/^[[0-9]{4}_.*/) != null; })
         .sort();
     
     const matches = [];

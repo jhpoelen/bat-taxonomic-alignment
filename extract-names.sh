@@ -8,7 +8,7 @@ set -xe
 
 COMPLETE_TSV_HASH=$(preston ls -l tsv | grep hasVersion | grep "urn:example:bta.tsv" | head -1 | cut -f3)
 
-NAME_COLUMN_PATTERN='^name.*'
+NAME_COLUMN_PATTERN='^[0-9]{4}_.*'
 
 preston cat ${COMPLETE_TSV_HASH}\
  | nl\
@@ -19,5 +19,6 @@ preston cat ${COMPLETE_TSV_HASH}\
  | sed -E "s+^([0-9]*)+https://linker.bio/line:${COMPLETE_TSV_HASH}!/L2,L\1.tsv+g"\
  | sed "s+.*treatmentId+treatmentId+g"\
  | mlr --tsvlite rename -r '(.*)([0-9]+)([.])([0-9]+)(.*),\1\2_\4\5'\
+ | mlr --tsvlite rename -r 'name_(.*)_([0-9]{4})(.*),\2_\1\3'\
  | mlr --tsvlite reshape -r ${NAME_COLUMN_PATTERN} -o accordingTo,scientificName
  

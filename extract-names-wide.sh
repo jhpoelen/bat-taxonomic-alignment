@@ -17,4 +17,6 @@ preston cat ${COMPLETE_TSV_HASH}\
  | sed -E "s/^2\t/treatmentId\t/g"\
  | sed -E "s+^([0-9]*)+https://linker.bio/line:${COMPLETE_TSV_HASH}!/L2,L\1.tsv+g"\
  | sed "s+.*treatmentId+treatmentId+g"\
- | mlr --tsvlite rename -r '(.*)([0-9]+)([.])([0-9]+)(.*),\1\2_\4\5'
+ | mlr --tsvlite rename -r '(.*)([0-9]+)([.])([0-9]+)(.*),\1\2_\4\5'\
+ | mlr --tsvlite rename -r 'name_(.*)_([0-9]{4})(.*),\2_\1\3'
+
