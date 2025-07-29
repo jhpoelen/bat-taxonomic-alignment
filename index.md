@@ -31,7 +31,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   </tbody>
 </table>
 
-<b>status: </b><span id="status">Agreement Index values calculating... (this may take a while)  <picture id="spinner"><img src="assets/3-dots-bounce-black-36.svg" style="visibility: visible; max-width: 100%;"></picture></span>
+<b>status: </b><span id="status">Agreement Index values calculating... (<a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/25">this may take a while</a>)  <picture id="spinner"><img src="assets/3-dots-bounce-black-36.svg" style="visibility: visible; max-width: 100%;"></picture></span>
 
 <figure>
   <figcaption>Figure 1. <em>BTA Agreement Index using <a href="https://github.com/politiken-journalism/scale-color-perceptual#readme">Viridis scale</a>.</em> Yellow/light colors indicate more agreement, green/dark shades indicate less agreement.</figcaption>
