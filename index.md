@@ -111,7 +111,8 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
         .keys(concept)
-        .filter(function(key) { return key.match(/^name.*/) != null; });
+        .filter(function(key) { return key.match(/^.*name_.*/) != null; })
+        .sort();
     
     const matches = [];
     for (var i = 0; i < catalogNames.length; i++) {
