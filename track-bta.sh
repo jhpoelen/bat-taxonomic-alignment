@@ -29,10 +29,10 @@ SCRIPT_ID=$(latest_version)
 #
 # version BTA 
 # 
-preston track https://zenodo.org/records/11193643/files/BTA_Version0.4.xlsx
+preston track "https://zenodo.org/records/16423149/files/BTA_v5%20(5).xlsx"
 preston alias "urn:example:bta.xlsx" "$(latest_version)"
 
-preston track https://zenodo.org/records/11193643/files/BTA_Version0.4_TSV
+preston track "https://zenodo.org/records/16423149/files/BTA_v5%20-%20Sheet1.tsv"
 
 BTA_ID=$(latest_version)
 

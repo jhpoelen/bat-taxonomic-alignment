@@ -1,0 +1,20 @@
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#SoftwareAgent> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<https://preston.guoda.bio> <http://purl.org/dc/terms/description> "Preston is a software program that finds, archives and provides access to biodiversity datasets."@en <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <http://purl.org/dc/terms/description> "A crawl event that discovers biodiversity archives."@en <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <http://www.w3.org/ns/prov#startedAtTime> "2025-07-29T13:37:33.691Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <http://www.w3.org/ns/prov#wasStartedBy> <https://preston.guoda.bio> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/ns/prov#usedBy> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Software> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<https://doi.org/10.5281/zenodo.1410543> <http://purl.org/dc/terms/bibliographicCitation> "Jorrit Poelen, Icaro Alzuru, & Michael Elliott. 2018-2024. Preston: a biodiversity dataset tracker (Version 0.11.0@d833b9a2995e5673d7df3c9428a7b740edcbd155) [Software]. Zenodo. https://doi.org/10.5281/zenodo.1410543"@en <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://purl.org/dc/terms/description> "A biodiversity dataset graph archive."@en <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<hash://sha256/32babdbd859dbf0ab525fb415a1b2edc57b3e16f8a094007bb419c25cfda64d1> <http://www.w3.org/ns/prov#usedBy> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> .
+<hash://sha256/db6ee25df5f270d22c5f60f8c60c15a167df7490190eee3baf207c74d395d822> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<hash://sha256/db6ee25df5f270d22c5f60f8c60c15a167df7490190eee3baf207c74d395d822> <http://www.w3.org/ns/prov#qualifiedGeneration> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <http://www.w3.org/ns/prov#generatedAtTime> "2025-07-29T13:37:48.574Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <http://www.w3.org/ns/prov#wasInformedBy> <urn:uuid:0b68823e-97d7-4afd-9191-352e1140f1ad> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> <http://www.w3.org/ns/prov#used> <https://zenodo.org/records/16423149/files/BTA_v5%20-%20Sheet1.tsv> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
+<https://zenodo.org/records/16423149/files/BTA_v5%20-%20Sheet1.tsv> <http://purl.org/pav/hasVersion> <hash://sha256/db6ee25df5f270d22c5f60f8c60c15a167df7490190eee3baf207c74d395d822> <urn:uuid:8fe66212-636d-4c5f-ba1a-2ed308c0090c> .
