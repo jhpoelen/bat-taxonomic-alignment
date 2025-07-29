@@ -7,12 +7,12 @@ layout: home
 # A Standardized Review of Bat Names Across Multiple Taxonomic Authorities
 
 Cite as: 
-> Sherman, A., Geiselman, C., Poelen, J., Simmons, N., Reeder, D., Upham, N., Phelps, K., & Agosti, D. (2024). A Standardized Review of Bat Names Across Multiple Taxonomic Authorities [Data set]. Zenodo. (https://doi.org/10.5281/zenodo.11193643)
+> Sherman, A., Geiselman, C., Poelen, J., Simmons, N., Reeder, D., Upham, N., Phelps, K., Agosti, D., Zijlstra, J., & Burgin, C. (2025). A Standardized Review of Bat Names Across Multiple Taxonomic Authorities (Version 5) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.16423149
 
 
 The taxonomic boundaries of species and higher-level taxa change relatively frequently as knowledge of population structure and evolutionary relationships improves, and older hypotheses are reframed. For the order Chiroptera (bats), valid names have long been assessed by multiple authorities, but differences among the resulting classifications largely remain unharmonized amongst authorities. We collected and aligned treatments across three primary taxonomic authorities for Chiroptera to create a single dynamic and versioned name translation tool. The resulting Bat Taxonomy Alignment will expedite future taxonomic assessments. The complexities uncovered in this alignment suggest the need for more explicit tracking of taxonomic concepts and usage of names in the future, particularly since biodiversity data (including hosts of zoonotic diseases) are cataloged and tracked using taxonomic names.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11193643.svg)](https://doi.org/10.5281/zenodo.11193643) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16423149.svg)](https://doi.org/10.5281/zenodo.16423149) 
 
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8/)](https://archive.softwareheritage.org/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8;origin=https://github.com/jhpoelen/bat-taxonomic-alignment;visit=swh:1:snp:ed17e4d64ad333b0285669fd632ea53c84fd3d16;anchor=swh:1:rev:380935f37f3a4783ace2239baeb626d40366c669)
 
@@ -20,18 +20,18 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_url }}), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue]({{ site.new_issue_url }}).
 
-<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and JSON-L formats.</em></caption><thead><th>name</th><th>description</th></thead>
+<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet<s>, TSV, CSV, and JSON-L formats</s>.</em></caption><thead><th>name</th><th>description</th></thead>
 <tbody>
     <tr><td><a href="./bta.xlsx">bta.xlsx</a></td><td>in proprietary Excel format.</td></tr>
-    <tr><td><a href="https://docs.google.com/spreadsheets/d/1JSIr4GJX26LnF6WEl_jvrP6eAiRJc32XbIseeC_Y9DM">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
-    <tr><td><a href="./bta.tsv">bta.tsv</a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
-    <tr><td><a href="./bta.csv">bta.csv</a></td><td>as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Seperated Values</a></td></tr>
-    <tr><td><a href="./bta.json">bta.json</a></td><td>as <a href="https://jsonlines.org/">JSON Lines</a> format</td></tr>
+    <tr><td><a href="https://docs.google.com/spreadsheets/d/1MhHVVw5HZ6KvQj_hje-UmBxMe0k_yLo-3z-YLCtxfks">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
+    <tr><td><a _href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.tsv</s></a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
+    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.csv</s></a></td><td>as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Separated Values</a></td></tr>
+    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.json</s></a></td><td>as <a href="https://jsonlines.org/">JSON Lines</a> format</td></tr>
 
   </tbody>
 </table>
 
-<b>status: </b><span id="status">Agreement Index values calculating...</span>
+<b>status: </b><span id="status">Agreement Index values calculating... (this may take a while)</span>
 
 <figure>
   <figcaption>Figure 1. <em>BTA Agreement Index using <a href="https://github.com/politiken-journalism/scale-color-perceptual#readme">Viridis scale</a>.</em> Yellow/light colors indicate more agreement, green/dark shades indicate less agreement.</figcaption>
@@ -111,7 +111,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
         .keys(concept)
-        .filter(function(key) { return key.match(/^Name.*/) != null; })
+        .filter(function(key) { return key.match(/^name.*/) != null; })
         .sort();
     
     const matches = [];
@@ -174,7 +174,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   document.querySelector('#matrixHeader').appendChild(document.createElement("th"));
  
   catalogsMatched.forEach(function (catalogA) {
-    var catalogName = catalogA.replace(/^Name[ _]/, '');
+    var catalogName = catalogA.replace(/^name[ _]/, '');
     document.querySelector('#matrixHeader').appendChild(document.createElement("th")).textContent = catalogName;
     var row = document.querySelector('#matrix').appendChild(document.createElement("tr"));
     row.appendChild(document.createElement("td")).textContent = catalogName;
