@@ -14,7 +14,7 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16423149.svg)](https://doi.org/10.5281/zenodo.16423149) 
 
-[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8/)](https://archive.softwareheritage.org/swh:1:dir:9ba2b7ef8c75873d945ccfd19845df28778e7da8;origin=https://github.com/jhpoelen/bat-taxonomic-alignment;visit=swh:1:snp:ed17e4d64ad333b0285669fd632ea53c84fd3d16;anchor=swh:1:rev:380935f37f3a4783ace2239baeb626d40366c669)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/jhpoelen/bat-taxonomic-alignment/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/jhpoelen/bat-taxonomic-alignment)
 
 {%- assign BTA = site.data.names | first | map: "treatmentId" | split: "sha256/" | last | slice: 0,8 | prepend: "BTA@" %}
 
@@ -111,8 +111,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
         .keys(concept)
-        .filter(function(key) { return key.match(/^name.*/) != null; })
-        .sort();
+        .filter(function(key) { return key.match(/^name.*/) != null; });
     
     const matches = [];
     for (var i = 0; i < catalogNames.length; i++) {
