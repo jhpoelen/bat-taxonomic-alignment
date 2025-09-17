@@ -107,6 +107,10 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
 
   });
+
+  var isSameName = function(nameA, nameB) { 
+    return nameA === nameB;
+  }
  
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
@@ -119,7 +123,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
       for (var j = i+1; j < catalogNames.length; j++) {  
         const nameA = concept[catalogNames[i]];
         const nameB = concept[catalogNames[j]];
-        const agreementValue =  nameA === nameB ? 1 : 0;
+        const agreementValue =  isSameName(nameA, nameB) ? 1 : 0;
         matches.push(agreementValue);
         const totalKey = catalogNames[i] + '*' + catalogNames[j]; 
         matchesTotal[totalKey] = (matchesTotal[totalKey] | 0) + agreementValue;
