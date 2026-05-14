@@ -1,28 +1,33 @@
 #!/bin/bash
 #
+#  export latest BTA to tsv, csv and jsonlines 
 #
 
-exportTSV() {
- preston alias "urn:example:bta.tsv"\
- | head -n1\
- | preston cat\
- | tail -n+2\
- | cut -f1-15\
- | mlr --tsvlite rename -r '(.*)([0-9]+)([.])([0-9]+)(.*),\1\2_\4\5'
-} 
+set -x
 
-exportTSV\
- > bta.tsv
- 
-exportTSV\
- | mlr --itsvlite --ocsv cat\
- > bta.csv
- 
-exportTSV\
- | mlr --itsvlite --ojsonl cat\
- > bta.json
+latestBTA() {
+  preston alias \
+   | grep "bta.xlsx"\
+   | head -n1
+}
 
-preston alias "urn:example:bta.xlsx"\
- | head -n1\
- | preston cat\
+latestBTA \
+ | preston cat \
  > bta.xlsx
+
+latestJSON() {
+  latestBTA \
+    | preston xlsx-stream --skip-lines 1 \
+    | sed 's/\\n/ /g'
+}
+
+latestJSON \
+  > bta.json
+
+latestJSON \
+  | mlr --ijsonl --otsvlite cat \
+  > bta.tsv
+
+latestJSON \
+  | mlr --ijsonl --ocsv cat \
+  > bta.csv
