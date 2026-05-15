@@ -63,7 +63,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 {%- assign color = colors[backgroundColorId] %}
 {%- assign conceptId = conceptId | prepend: "BTA_" %}
     <tr id="{{ conceptId }}" style="background-color: {{ color }};">
-<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName | escape }}</em></td><td> {{ name.accordingTo }}</td>
+<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName | escape }}</em></td><td class="{{ name.accordingTo }}"> {{ name.accordingTo }}</td>
     </tr>
 {%- endfor %}
   </tbody>
@@ -76,6 +76,8 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 <script src="assets/js/viridis.js"></script>
 
 <script>
+
+  var authorities = {{ site.data.authorities | jsonify }};
 
   var concepts = {{ site.data.names-wide | jsonify }};
 
@@ -179,9 +181,21 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
  
   catalogsMatched.forEach(function (catalogA) {
     var catalogName = catalogA.replace(/^name[ _]/, '');
-    document.querySelector('#matrixHeader').appendChild(document.createElement("th")).textContent = catalogName;
+
+    var catalogNameHeader = document.createElement("th");
+    catalogNameHeader.textContent = catalogName;
+    catalogNameHeader.setAttribute("class", catalogName);
+
+    document.querySelector('#matrixHeader').appendChild(catalogNameHeader);
+
     var row = document.querySelector('#matrix').appendChild(document.createElement("tr"));
-    row.appendChild(document.createElement("td")).textContent = catalogName;
+
+    var catalogNameRowData = document.createElement("td");
+    catalogNameRowData.textContent = catalogName;
+    catalogNameRowData.setAttribute("class", catalogName);
+
+    row.appendChild(catalogNameRowData);
+
     catalogsMatched.forEach(function (catalogB) {
       var cell = row.appendChild(document.createElement("td"));
       const mismatchCount = mismatchesTotal[catalogA + "*" + catalogB];
