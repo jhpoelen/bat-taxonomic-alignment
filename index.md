@@ -20,13 +20,13 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_url }}), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue]({{ site.new_issue_url }}).
 
-<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet<s>, TSV, CSV, and JSON-L formats</s>.</em></caption><thead><th>name</th><th>description</th></thead>
+<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and [JSON Lines](https://jsonlines.org/) formats.</em></caption><thead><th>name</th><th>description</th></thead>
 <tbody>
     <tr><td><a href="./bta.xlsx">bta.xlsx</a></td><td>in proprietary Excel format.</td></tr>
     <tr><td><a href="https://docs.google.com/spreadsheets/d/1MhHVVw5HZ6KvQj_hje-UmBxMe0k_yLo-3z-YLCtxfks">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
-    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.tsv</s></a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
-    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.csv</s></a></td><td>as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Separated Values</a></td></tr>
-    <tr><td><a href="https://github.com/jhpoelen/bat-taxonomic-alignment/issues/24#issuecomment-3133402423"><s>bta.json</s></a></td><td>as <a href="https://jsonlines.org/">JSON Lines</a> format</td></tr>
+    <tr><td><a href="./bta.tsv">bta.tsv</a></td><td>as <a href="https://www.iana.org/assignments/media-types/text/tab-separated-values">Tab Separated Values</a></td></tr>
+    <tr><td><a href="./bta.csv">bta.csv</a></td><td>as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Separated Values</a></td></tr>
+    <tr><td><a href="./bta.json">bta.json</a></td><td>as <a href="https://jsonlines.org/">JSON Lines</a> format</td></tr>
 
   </tbody>
 </table>
