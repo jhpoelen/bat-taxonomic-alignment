@@ -41,7 +41,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
 <figure>
   <figcaption>Figure 2. <em>A clickable heatmap containing all BTA concepts and their associated agreement index organized in no particular order.</em> Yellow/light colors indicate more agreement, green/dark shades indicate less agreement.</figcaption>
-  <div id="map" style="display: flex; flex-direction: row; flex-wrap: wrap;"></div>
+  <div id="heatmap" style="display: flex; flex-direction: row; flex-wrap: wrap;"></div>
 </figure>
 
 <br/>
@@ -69,7 +69,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   </tbody>
 </table>
 
-
+## References
 
 
 
@@ -78,6 +78,14 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 <script>
 
   var authorities = {{ site.data.authorities | jsonify }};
+
+  var references = document.querySelector("#references");
+  
+  authorities.forEach(function(authority) {
+    let reference = references.appendChild(document.createElement("a"));
+    reference.appendChild(document.createElement("div")).textContent = (authority.authorityCode + " " + authority.zenodoDoi);
+    reference.setAttribute("href", authority.zenodoDoi);
+  });
 
   var concepts = {{ site.data.names-wide | jsonify }};
 
@@ -93,8 +101,10 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   }
   
   const pallette = [{ index: 1.0, text: "more agreement" }, { index: 0.75, text: "" }, { index: 0.5, text: "" }, { index: 0.25, text: "" }, { index:  0, text: "less agreement"}];
+
+  const palletteFragment = new DocumentFragment();
   pallette.forEach(function(box) {
-    var palletteBox = document.querySelector("#pallette").appendChild(document.createElement("div"));
+    var palletteBox = palletteFragment.appendChild(document.createElement("div"));
     palletteBox.appendChild(document.createElement("div")).textContent = box.index.toFixed(1);    
     if (box.text) { 
        palletteBox.appendChild(document.createElement("div")).textContent = box.text;    
@@ -110,9 +120,13 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
   });
 
+  document.querySelector("#pallette").append(palletteFragment);
+
   var isSameName = function(nameA, nameB) { 
     return nameA === nameB;
   }
+
+  const heatmapFragment = new DocumentFragment();
  
   var agreementIndex = concepts.forEach(function(concept) {
     const catalogNames = Object
@@ -144,16 +158,14 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
           applyColorsForIndex(elem, item.agreementIndex);
        });
 
-       const square = document
-         .querySelector('#map')
-         .appendChild(document.createElement('div'));
+       const square = heatmapFragment.appendChild(document.createElement('div'));
        applyColorsForIndex(square, item.agreementIndex);
        square.style.width = '0.7em';
        square.style.height = '0.7em';
        square.setAttribute('title', 'click to jump to [' + item.conceptId + ']');
        square.addEventListener(
          "click", 
-         function () { history.pushState({}, "", "#map"); document.querySelector('#' + item.conceptId).scrollIntoView(); }, 
+         function () { history.pushState({}, "", "#heatmap"); document.querySelector('#' + item.conceptId).scrollIntoView(); }, 
          false
        );
     };
@@ -168,6 +180,8 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
   });
 
+  document.querySelector("#heatmap").append(heatmapFragment);
+
   var catalogsMatched = Object
     .keys(matchesTotal)
     .reduce(function (accum, key) { 
@@ -175,6 +189,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
        return accum }, [])
     .sort();
 
+  const matrixFragment = new DocumentFragment();
     
 
   document.querySelector('#matrixHeader').appendChild(document.createElement("th"));
@@ -188,7 +203,9 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
     document.querySelector('#matrixHeader').appendChild(catalogNameHeader);
 
-    var row = document.querySelector('#matrix').appendChild(document.createElement("tr"));
+
+    var row = matrixFragment.appendChild(document.createElement("tr"));
+ 
 
     var catalogNameRowData = document.createElement("td");
     catalogNameRowData.textContent = catalogName;
@@ -208,6 +225,8 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
       }
     }); 
   });
+
+  document.querySelector('#matrix').append(matrixFragment);
 
   var spinner = document.querySelector('#spinner');
   if (spinner) {
