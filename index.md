@@ -20,7 +20,7 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_url }}), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue]({{ site.new_issue_url }}).
 
-<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and [JSON Lines](https://jsonlines.org/) formats.</em></caption><thead><th>name</th><th>description</th></thead>
+<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and <a href="https://jsonlines.org">JSON Lines</a> formats.</em></caption><thead><th>name</th><th>description</th></thead>
 <tbody>
     <tr><td><a href="./bta.xlsx">bta.xlsx</a></td><td>in proprietary Excel format.</td></tr>
     <tr><td><a href="https://docs.google.com/spreadsheets/d/1MhHVVw5HZ6KvQj_hje-UmBxMe0k_yLo-3z-YLCtxfks">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
