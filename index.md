@@ -63,7 +63,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 {%- assign color = colors[backgroundColorId] %}
 {%- assign conceptId = conceptId | prepend: "BTA_" %}
     <tr id="{{ conceptId }}" style="background-color: {{ color }};">
-<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName | escape }}</em></td><td class="{{ name.accordingTo }}"> {{ name.accordingTo }}</td>
+<td><a href="{{ name.treatmentId }}">{{ conceptId }}{{ name.treatmentId | split: "sha256/" | last | slice: 0,8 | prepend: "@" }}</a></td><td> <div class="{{ conceptId }}"/></td><td> <em>{{ name.scientificName | escape }}</em></td><td class="{{ name.accordingTo }}"><a href="#{{ name.accordingTo }}">{{ name.accordingTo }}</a></td>
     </tr>
 {%- endfor %}
   </tbody>
@@ -85,6 +85,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
     let reference = references.appendChild(document.createElement("a"));
     reference.appendChild(document.createElement("div")).textContent = (authority.authorityCode + " " + authority.zenodoDoi);
     reference.setAttribute("href", authority.zenodoDoi);
+    reference.setAttribute("id", authority.authorityCode);
   });
 
   var concepts = {{ site.data.names-wide | jsonify }};
@@ -193,25 +194,26 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
     
 
   document.querySelector('#matrixHeader').appendChild(document.createElement("th"));
+    
+  const appendCatalogLabel = function(elem, catalogName) {
+    const catalogNameLabel = catalogNameHeader.appendChild(document.createElement("a"));
+    catalogNameLabel.textContent = catalogName;
+    catalogNameLabel.setAttribute("class", catalogName);
+    catalogNameLabel.setAttribute("href", "#" + catalogName);
+  } 
  
   catalogsMatched.forEach(function (catalogA) {
     var catalogName = catalogA.replace(/^name[ _]/, '');
 
     var catalogNameHeader = document.createElement("th");
-    catalogNameHeader.textContent = catalogName;
-    catalogNameHeader.setAttribute("class", catalogName);
-
+    appendCatalogLabel(catalogNameHeader, catalogName);
     document.querySelector('#matrixHeader').appendChild(catalogNameHeader);
 
 
     var row = matrixFragment.appendChild(document.createElement("tr"));
- 
 
-    var catalogNameRowData = document.createElement("td");
-    catalogNameRowData.textContent = catalogName;
-    catalogNameRowData.setAttribute("class", catalogName);
-
-    row.appendChild(catalogNameRowData);
+    var catalogNameRowData = row.appendChild(document.createElement("td"));
+    appendCatalogLabel(catalogNameRowData, catalogName);
 
     catalogsMatched.forEach(function (catalogB) {
       var cell = row.appendChild(document.createElement("td"));
