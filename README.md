@@ -86,3 +86,24 @@ Aligning bat names across taxonomic authorities is a labor intensive task.
 
 This repository relates the Bat Taxonomic Alignment by Aja Sherman, Cullen Geiselman, et al. to associated names in taxonomic resources like those provided by [Bat Names](https://batnames.org), [Mammal Diversity Database](https://mammaldiversity.org), Handbook of the Mammals of the World, Mammal Species of the World, and more. 
 
+The taxonomic authorities at time of writing (2026-05-18) are listed along with the suspected digital file that was used to populate associated fields in the BTA schema.
+
+| authorityCode | authorityFilename(s) | authorityFilenameSignature(s) | derivedFrom |
+| --- | --- |
+| 1980\_CH1 | ch1.xslx | | https://doi.org/10.5281/zenodo.17260800 |
+| 1982\_MSW1 | msw1.xlsx | | https://doi.org/10.5281/zenodo.13445249 |
+| 1991\_CH3 | ch3.xlsx | | https://doi.org/10.5281/zenodo.18023078 |
+| 1993\_MSW2 | NA | | https://doi.org/10.5281/zenodo.13424577 |
+| 1994\_Koopman | koopman1994.xslx | | https://doi.org/10.5281/zenodo.13422270 |
+| 2005\_MSW3 | NA | | https://doi.org/10.5281/zenodo.13520803 |
+| 2019\_HMW | 'HMW_2019_Handbook Treatments.xlsx' | | https://jhpoelen.nl/hmw
+| 2022\_BatNames | batnames_2022_chiroptera2022Oct11.xlsx | | https://doi.org/10.5281/zenodo.6857865 |
+| 2022\_IUCN | IUCN_2022_assessments.xlsx | | NA
+| 2022\_MDD | MDD_v1.9.1_6596species.xlsx | | https://doi.org/10.5281/zenodo.7358650 |
+| 2023\_BatNames | chiroptera2023-10-03batnames.xlsx | | https://doi.org/10.5281/zenodo.8136157 |
+| 2023\_MDD | MDD_v1.11_6649species.xlsx |  | https://doi.org/10.5281/zenodo.7830771 |
+| 2025\_batnames\_1\_7 | batnames_2025_1.7_Chiroptera2025-06-03.xlsx | | https://doi.org/10.5281/zenodo.14796586 |
+| 2025\_MDD\_2\_0 | NA | | https://doi.org/10.5281/zenodo.15007505 |
+| 2025\_MDD\_2\_2 | NA | | https://doi.org/10.5281/zenodo.15659662 |
+
+
