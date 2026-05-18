@@ -196,27 +196,27 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   document.querySelector('#matrixHeader').appendChild(document.createElement("th"));
     
   const appendCatalogLabel = function(elem, catalogName) {
-    const catalogNameLabel = catalogNameHeader.appendChild(document.createElement("a"));
+    const catalogNameLabel = elem.appendChild(document.createElement("a"));
     catalogNameLabel.textContent = catalogName;
     catalogNameLabel.setAttribute("class", catalogName);
     catalogNameLabel.setAttribute("href", "#" + catalogName);
   } 
  
   catalogsMatched.forEach(function (catalogA) {
-    var catalogName = catalogA.replace(/^name[ _]/, '');
+    const catalogName = catalogA.replace(/^name[ _]/, '');
 
-    var catalogNameHeader = document.createElement("th");
+    const catalogNameHeader = document.createElement("th");
     appendCatalogLabel(catalogNameHeader, catalogName);
     document.querySelector('#matrixHeader').appendChild(catalogNameHeader);
 
 
-    var row = matrixFragment.appendChild(document.createElement("tr"));
+    const row = matrixFragment.appendChild(document.createElement("tr"));
 
-    var catalogNameRowData = row.appendChild(document.createElement("td"));
+    const catalogNameRowData = row.appendChild(document.createElement("td"));
     appendCatalogLabel(catalogNameRowData, catalogName);
 
     catalogsMatched.forEach(function (catalogB) {
-      var cell = row.appendChild(document.createElement("td"));
+      const cell = row.appendChild(document.createElement("td"));
       const mismatchCount = mismatchesTotal[catalogA + "*" + catalogB];
       if (mismatchCount) {
           cell.textContent = mismatchCount;
