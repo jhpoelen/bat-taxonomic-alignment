@@ -89,7 +89,7 @@ This repository relates the Bat Taxonomic Alignment by Aja Sherman, Cullen Geise
 The taxonomic authorities at time of writing (2026-05-18) are listed along with the suspected digital file that was used to populate associated fields in the BTA schema.
 
 | authorityCode | authorityFilename(s) | authorityFilenameSignature(s) | derivedFrom |
-| --- | --- |
+| --- | --- | --- | --- |
 | 1980\_CH1 | ch1.xslx | | https://doi.org/10.5281/zenodo.17260800 |
 | 1982\_MSW1 | msw1.xlsx | | https://doi.org/10.5281/zenodo.13445249 |
 | 1991\_CH3 | ch3.xlsx | | https://doi.org/10.5281/zenodo.18023078 |
