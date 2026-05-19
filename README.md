@@ -96,7 +96,7 @@ The taxonomic authorities used to compile BTA, at time of writing 2026-05-18, ar
 | 1980\_CH1 | [ch1.xslx](sources/ch1.xlsx) | | https://doi.org/10.5281/zenodo.17260800 |
 | 1982\_MSW1 | [msw1.xlsx](sources/msw1.xlsx) | | https://doi.org/10.5281/zenodo.13445249 |
 | 1991\_CH3 | [ch3.xlsx](sources/ch3.xlsx) | | https://doi.org/10.5281/zenodo.18023078 |
-| 1993\_MSW2 | [msw2.csv](sources/msw2.csv) | | https://doi.org/10.5281/zenodo.13424577 |
+| 1993\_MSW2 | [msw2.csv](https://github.com/jhpoelen/msw2/blob/main/msw2.csv) | | https://doi.org/10.5281/zenodo.13424577 |
 | 1994\_Koopman | [koopman1994.xslx](sources/koopman1994.xlsx) | | https://doi.org/10.5281/zenodo.13422270 |
 | 2005\_MSW3 | [38 Chiroptera final MSW3 database.xls](https://github.com/jhpoelen/msw3/blob/ee893d4b53d0a4d163b8e895373ebb40c9935294/data-raw/38%20Chiroptera%20final%20MSW3%20database.xls) | | https://doi.org/10.5281/zenodo.13520803 |
 | 2019\_HMW | [HMW_2019_Handbook Treatments.xlsx](sources/HMW_2019_Handbook%20Treatments.xlsx) | | [https://jhpoelen.nl/hmw](https://jhpoelen.nl/hmw)
