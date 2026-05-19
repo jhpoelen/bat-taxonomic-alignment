@@ -99,7 +99,7 @@ The taxonomic authorities used to compile BTA, at time of writing 2026-05-18, ar
 | 1993\_MSW2 | [msw2.csv](https://github.com/jhpoelen/msw2/blob/main/msw2.csv) | | https://doi.org/10.5281/zenodo.13424577 |
 | 1994\_Koopman | [koopman1994.xslx](sources/koopman1994.xlsx) | | https://doi.org/10.5281/zenodo.13422270 |
 | 2005\_MSW3 | [38 Chiroptera final MSW3 database.xls](https://github.com/jhpoelen/msw3/blob/ee893d4b53d0a4d163b8e895373ebb40c9935294/data-raw/38%20Chiroptera%20final%20MSW3%20database.xls) | | https://doi.org/10.5281/zenodo.13520803 |
-| 2019\_HMW | [HMW_2019_Handbook Treatments.xlsx](sources/HMW_2019_Handbook%20Treatments.xlsx) | | [https://jhpoelen.nl/hmw](https://jhpoelen.nl/hmw)
+| 2019\_HMW | [HMW_2019_Handbook Treatments.xlsx](sources/HMW_2019_Handbook%20Treatments.xlsx) | | https://doi.org/10.5281/zenodo.20290441
 | 2022\_BatNames | [batnames_2022_chiroptera2022Oct11.xlsx](sources/batnames_2022_chiroptera2022Oct11.xlsx) | | https://doi.org/10.5281/zenodo.6857865 |
 | 2022\_IUCN | [IUCN_2022_assessments.xlsx](sources/IUCN_2022_assessments.xlsx) | | NA
 | 2022\_MDD | [MDD_v1.9.1_6596species.csv](https://zenodo.org/records/7358650/files/MDD_v1.9.1_6596species.csv) | | https://doi.org/10.5281/zenodo.7358650 |
