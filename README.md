@@ -91,22 +91,22 @@ This repository relates the Bat Taxonomic Alignment by Aja Sherman, Cullen Geise
 
 The taxonomic authorities used to compile BTA, at time of writing 2026-05-18, are listed along with the suspected digital file that was used to populate associated fields in the BTA schema.
 
-| authorityCode | authorityFilename(s) | authorityFilenameSignature(s) | derivedFrom |
-| --- | --- | --- | --- |
-| 1980\_CH1 | [ch1.xslx](sources/ch1.xlsx) | | https://doi.org/10.5281/zenodo.17260800 |
-| 1982\_MSW1 | [msw1.xlsx](sources/msw1.xlsx) | | https://doi.org/10.5281/zenodo.13445249 |
-| 1991\_CH3 | [ch3.xlsx](sources/ch3.xlsx) | | https://doi.org/10.5281/zenodo.18023078 |
-| 1993\_MSW2 | [msw2.csv](https://github.com/jhpoelen/msw2/blob/main/msw2.csv) | | https://doi.org/10.5281/zenodo.13424577 |
-| 1994\_Koopman | [koopman1994.xslx](sources/koopman1994.xlsx) | | https://doi.org/10.5281/zenodo.13422270 |
-| 2005\_MSW3 | [38 Chiroptera final MSW3 database.xls](https://github.com/jhpoelen/msw3/blob/ee893d4b53d0a4d163b8e895373ebb40c9935294/data-raw/38%20Chiroptera%20final%20MSW3%20database.xls) | | https://doi.org/10.5281/zenodo.13520803 |
-| 2019\_HMW | [HMW_2019_Handbook Treatments.xlsx](sources/HMW_2019_Handbook%20Treatments.xlsx) | | https://doi.org/10.5281/zenodo.20290441
-| 2022\_BatNames | [batnames_2022_chiroptera2022Oct11.xlsx](sources/batnames_2022_chiroptera2022Oct11.xlsx) | | https://doi.org/10.5281/zenodo.6857865 |
-| 2022\_IUCN | [IUCN_2022_assessments.xlsx](sources/IUCN_2022_assessments.xlsx) | | NA
-| 2022\_MDD | [MDD_v1.9.1_6596species.csv](https://zenodo.org/records/7358650/files/MDD_v1.9.1_6596species.csv) | | https://doi.org/10.5281/zenodo.7358650 |
-| 2023\_BatNames | [chiroptera2023-10-03batnames.xlsx](sources/chiroptera2023-10-03batnames.xlsx) | | https://doi.org/10.5281/zenodo.8136157 |
-| 2023\_MDD | [MDD_v1.11_6649species.csv](https://zenodo.org/records/7830771/files/MDD_v1.11_6649species.csv) |  | https://doi.org/10.5281/zenodo.7830771 |
-| 2025\_batnames\_1\_7 | [batnames_2025_1.7_Chiroptera2025-06-03.xlsx](sources/chiroptera2023-10-03batnames.xlsx) | | https://doi.org/10.5281/zenodo.14796586 |
-| 2025\_MDD\_2\_0 | [MDD_v2.0_6759species.csv](https://zenodo.org/records/15007505/files/MDD_v2.0_6759species.csv) | | https://doi.org/10.5281/zenodo.15007505 |
-| 2025\_MDD\_2\_2 | [MDD_v2.2_6815species.csv](https://zenodo.org/records/15659662/files/MDD_v2.2_6815species.csv) | | https://doi.org/10.5281/zenodo.15659662 |
+| authorityCode | authorityFilename(s) | derivedFrom |
+| --- | --- | --- |
+| 1980\_CH1 | [ch1.xslx](sources/ch1.xlsx) | https://doi.org/10.5281/zenodo.17260800 |
+| 1982\_MSW1 | [msw1.xlsx](sources/msw1.xlsx) | https://doi.org/10.5281/zenodo.13445249 |
+| 1991\_CH3 | [ch3.xlsx](sources/ch3.xlsx) | https://doi.org/10.5281/zenodo.18023078 |
+| 1993\_MSW2 | [msw2.csv](https://github.com/jhpoelen/msw2/blob/main/msw2.csv) | https://doi.org/10.5281/zenodo.13424577 |
+| 1994\_Koopman | [koopman1994.xslx](sources/koopman1994.xlsx) | https://doi.org/10.5281/zenodo.13422270 |
+| 2005\_MSW3 | [38 Chiroptera final MSW3 database.xls](https://github.com/jhpoelen/msw3/blob/ee893d4b53d0a4d163b8e895373ebb40c9935294/data-raw/38%20Chiroptera%20final%20MSW3%20database.xls) | https://doi.org/10.5281/zenodo.13520803 |
+| 2019\_HMW | [HMW_2019_Handbook Treatments.xlsx](sources/HMW_2019_Handbook%20Treatments.xlsx) | https://doi.org/10.5281/zenodo.20290441
+| 2022\_BatNames | [batnames_2022_chiroptera2022Oct11.xlsx](sources/batnames_2022_chiroptera2022Oct11.xlsx) | https://doi.org/10.5281/zenodo.6857865 |
+| 2022\_IUCN | [IUCN_2022_assessments.xlsx](sources/IUCN_2022_assessments.xlsx) | NA
+| 2022\_MDD | [MDD_v1.9.1_6596species.csv](https://zenodo.org/records/7358650/files/MDD_v1.9.1_6596species.csv) | https://doi.org/10.5281/zenodo.7358650 |
+| 2023\_BatNames | [chiroptera2023-10-03batnames.xlsx](sources/chiroptera2023-10-03batnames.xlsx) | https://doi.org/10.5281/zenodo.8136157 |
+| 2023\_MDD | [MDD_v1.11_6649species.csv](https://zenodo.org/records/7830771/files/MDD_v1.11_6649species.csv) | https://doi.org/10.5281/zenodo.7830771 |
+| 2025\_batnames\_1\_7 | [batnames_2025_1.7_Chiroptera2025-06-03.xlsx](sources/chiroptera2023-10-03batnames.xlsx) | https://doi.org/10.5281/zenodo.14796586 |
+| 2025\_MDD\_2\_0 | [MDD_v2.0_6759species.csv](https://zenodo.org/records/15007505/files/MDD_v2.0_6759species.csv) | https://doi.org/10.5281/zenodo.15007505 |
+| 2025\_MDD\_2\_2 | [MDD_v2.2_6815species.csv](https://zenodo.org/records/15659662/files/MDD_v2.2_6815species.csv) | https://doi.org/10.5281/zenodo.15659662 |
 
 
