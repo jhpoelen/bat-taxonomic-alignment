@@ -1,0 +1,427 @@
+﻿Target Journal: PLOS Biology as a Methods and Resources paper
+
+
+
+
+This is the working copy as of July 1, 2026
+
+The Bat Taxonomic Alignment: A Tool for Tracking Taxonomic Change in Bats and Improving Biodiversity Data Integration
+
+
+Sherman, Aja C1.; Montauban, Cecilia2,3; Agosti, Donat; Groom, Quentin; Morales, Ariadna E; Oliveira, Hernani F. M.; Phelps, Kendra; Poelen, Jorrit H.; Reeder, DeeAnn M.; Simmons, Nancy B.; Tanshi, I; Upham, Nathan S.; Willoughby, Anna R; Zijlstra, J. S.; Geiselman, Cullen1
+
+
+1Bat Eco-Interaction Project
+2Department of Zoology and Entomology, University of Pretoria, Pretoria, South Africa
+3Department of Life Sciences, Imperial College London, Ascot, London, UK
+Plazi
+ Departamento de Fitopatologia, Universidade de Brasília, Brasília, DF, Brazil
+Departamento de Zoologia, Universidade Federal do Paraná, Curitiba, PR, Brazil
+College of Veterinary Medicine, University of Minnesota, St. Paul, MN, USA
+Ronin Institute for Independent Scholarship, Monclair, NJ, USA
+Center for Biodiversity and Ecological Restoration, UC Santa Barbara, Santa Barbara, CA, USA, 
+Bucknell University, Department of Biology, Lewisburg, PA, USA
+Department of Mammalogy, Division of Vertebrate Zoology, American Museum of Natural History, New York, NY 10024
+Department of Biology, University of Washington, Seattle, USA.
+Small Mammal Conservation Organization, Benin City, Nigeria.
+Arizona State University, School of Life Sciences, Tempe, AZ, USA
+Odum School of Ecology, University of Georgia, GA, USA
+Meise Botanic Garden, Meise, Belgium
+
+
+Corresponding author: Aja C. Sherman 
+Email: aja@batbase.org
+
+
+
+
+
+
+________________
+
+
+Abstract 
+Species names provide the foundation for organizing biological knowledge, linking information across evolution, conservation, genomics[a], epidemiology, and biodiversity monitoring. Yet the taxonomic concepts associated with those names often change through time, creating challenges for interpreting and integrating data collected under different classifications. Bats provide a useful model system for examining these challenges because they have undergone extensive taxonomic revision in recent decades and increasingly serve as focal taxa in research ranging from conservation to disease ecology. To address this challenge, we developed the Bat Taxonomic Alignment (BTA), a framework that reconciles taxonomic concepts across fifteen major bat authorities spanning 45 years (1980–2025). The BTA enables users to track how species concepts[b] have changed through time, linking historical and contemporary classifications while preserving provenance and alternative treatments. Application of the framework revealed substantial disagreement among contemporary taxonomic authorities, with hundreds of conflicting species treatments persisting despite increasing efforts toward standardization. To demonstrate its utility, we used the BTA to audit taxonomic consistency within the IUCN Red List, identifying 287 taxonomic modifications affecting ~20% of assessed bat species[c][d], and demonstrating how taxonomic discrepancies can propagate into conservation infrastructure. Although developed using bats as a model system, the challenges addressed by the BTA extend across biodiversity science wherever changing taxonomies influence the interpretation of biological data. By making taxonomic concepts explicit, traceable, and interoperable, the framework supports more transparent, reproducible, and integrated use of biological data.
+
+
+Keywords: Taxonomic concepts; Taxonomic alignment; Biodiversity informatics; Biodiversity data integration; Species concepts
+________________
+
+
+Introduction 
+Taxonomy is the primary indexing system of biological knowledge. Taxonomic names link data from field observations to museum specimens, genomic sequences to ecological interactions[e], hosts to pathogen records, and conservation status to legal protections. Across disciplines, species names function as the keys by which data are organized, integrated, and interpreted. Effective research, management, and policy depend on clearly defined taxonomic units that reflect biological reality and can be tracked through space and time (Voigt et al 2016; Lyal et al. 2008; Sharma et al. 2024). In this sense, taxonomy is not merely a classificatory exercise; it is the foundational infrastructure for biodiversity science, public health, and environmental governance (CITE CITE).
+The global taxonomic infrastructure operates under increasing strain. Global biodiversity is declining at an unprecedented rate (Keck et al. 2025), intensifying the need for accurate species identification and tracking, while biological data are being generated, digitized, and aggregated at unprecedented scales (Bayraktarov et al., 2019[f]; Heberling et al., 2021[g]; Ji et al., 2026; GBIF No. 12, 2025). Occurrence records, genomic sequences, ecological networks, and host–pathogen databases – to give some examples - are increasingly integrated across global repositories such as the Global Biodiversity Information Facility (GBIF), GenBank, BOLD, and institutional collections. The reliability of these systems depends on the assumption that taxonomic names consistently refer to comparable biological entities. Increasingly, that assumption does not hold.
+A central but often overlooked issue is that a name string - the sequence of letters used to represent the name of a biological taxon (e.g., Homo sapiens)[h] - is not equivalent to the taxonomic species concept it represents. Taxonomic names are shorthand for evolving hypotheses about species boundaries and evolutionary relationships (Zachos, 2018[i]). The same binomial[j] may refer to different circumscriptions – the set of populations included in a taxon - across taxonomic classifications or time, while different names may refer to the same lineage. Advances in integrative taxonomy increasingly combine molecular, morphological, ecological, behavioural, and biogeographic evidence to refine species boundaries and classifications (Dayrat, 2005; Padial et al., 2010; Solari et al., 2019). As a result, species concepts are continually reassessed as new evidence emerges (de Queiroz, 2025; Zachos, 2018). Differences in synonymy, rank, genus placement, spelling, or species delimitation therefore reflect scientific progress, yet biodiversity data systems frequently treat names as stable identifiers (Page 2008[k])[l]. Without explicit tracking of taxonomic species concepts, including who defined them, when, and under what circumscription, data repositories implicitly assume stability. As a result, records may be combined or split based solely on name matching, rather than if they represent the same biological concept.
+Because scientific names underpin biological databases, museum collections, scientific publications, genomic resources, and conservation assessments, changes in species circumscriptions can propagate throughout interconnected biological infrastructures and downstream applications (Figure 1).
+
+
+  
+
+Figure 1: Downstream Effects of Taxonomic Changes: Why taxonomic concept alignment matters. (a) Historically, many species were recognised as single, widespread taxonomic concepts. The bent-winged bat Miniopterus schreibersii is used here as an illustrative example of a species that was once thought to encompass a broad geographic distribution. (b) As scientific knowledge advances, taxonomic revisions can divide historical concepts into multiple species with distinct distributions and biological identities. Although scientific names may persist, the biological entities they represent can change substantially through time. (c) This creates challenges across biological data because historical records and downstream applications are typically linked only by scientific names, making it unclear which contemporary species concept those records actually represent. (d) Taxonomic concept alignment, such as the Bat Taxonomic Alignment (BTA) framework presented here, addresses this challenge by explicitly linking historical and contemporary taxonomic concepts through documented concept relationships and provenance, enabling reproducible integration of biodiversity data across taxonomic authorities, databases, and time periods. Distribution data shown in panel (a) are based on the third edition of Mammal Species of the World (MSW3), whereas panel (b) reflects species concepts recognised by the Mammal Diversity Database version 2 (MDD2).  Icons are from FreePic
+
+
+Despite the centrality of taxonomy to many scientific disciplines, there remains no widely available framework that transparently aligns competing taxonomic concepts across[m] authorities and time. A range of tools exists to reconcile taxonomic name strings across datasets, including fuzzy matching algorithms (e.g., Taxamatch; Rees, 2014), web-based resolution services (e.g., TNRS; Boyle et al., 2013), multi-database query frameworks (Berendsohn et al. 2026), and phylogeny matching tools (e.g., Phylomatcher; Radar et al., 2023). These approaches are effective for correcting misspellings, resolving orthographic variants, and identifying synonyms, but they operate primarily at the level of name strings rather than dynamic taxonomic concepts (Tsang et al., 2016). Consequently, they do not resolve deeper incongruences arising from alternative species circumscriptions, rank changes, or conflicting taxonomic treatments (Franz et al., 2016; Patterson et al., 2010). Large biodiversity infrastructures such as GBIF maintain extensive synonymy and cross-reference records, yet their effective use still requires manual interpretation to determine which taxonomic concept a name actually represents. 
+Even in the largest data repositories, significant ingestion gaps persist (Garnett, 2020). When aggregators attempt to harmonize data from hundreds of sources, they frequently adopt a single preferred taxonomic treatment (Mesibov, 2013; 2018; Franz et al., 2016). As demonstrated by Mesibov (2013, 2018), automated look-up tables often prioritize string-to-string matching over taxonomic concepts, potentially overwriting the original taxonomic intent of source datasets. Consequently, records may be reassigned to accepted names that reflect different taxonomic concepts or an outdated circumscription (Burgin et al., 2018). Without provenance or concept-level tracking, it becomes difficult for researchers to determine whether a name reflects a contemporary taxonomic consensus or simply an artifact of an automated harmonization process.
+As taxonomic discovery accelerates and global data integration expands, the need for transparent, versioned alignment of taxonomic concepts becomes increasingly urgent. Currently, no freely available framework provides concept-driven reconciliation of taxonomic names across taxonomic authorities while simultaneously preserving alternative interpretations, historical provenance, and the temporal and geographic context in which taxonomic decisions are made (Radar et al., 2023). 
+Bats (Order Chiroptera) provide an ideal system in which to develop and test a concept alignment framework. The number of recognized bat species has increased by more than one-third since the early 1990s, reflecting rapid advances in phylogenetics, integrative taxonomy, and the resolution of cryptic species complexes (Monadjem et al., 2024; Burgin et al., 2025). As illustrated in Figure 1, taxonomic revisions can substantially alter the biological meaning associated with scientific names, creating challenges for many downstream disciplines, including biodiversity monitoring, conservation assessments, ecological studies, ecosystem service evaluations, and disease surveillance. Although bats are used here as a model system, these challenges extend across biodiversity science wherever data are linked through taxonomic names that change through time.
+Here, we present the Bat Taxonomic Alignment (BTA), an open-access, version-controlled framework designed to document and align taxonomic concepts across major taxonomic authorities spanning more than four decades. Rather than acting as a new taxonomic authority, the BTA preserves and organizes how species concepts are treated across alternative classifications, explicitly recording synonymy, rank changes, genus transfers, and competing interpretations. By shifting the focus from name strings to taxonomic concepts, the BTA provides a transparent bridge among biodiversity repositories, literature, and conservation workflows. Using bats as a globally relevant case study, we demonstrate how concept-level alignment can reconcile alternative taxonomic treatments, quantify disagreement among leading taxonomic authorities, and reveal inconsistencies in conservation infrastructure through an audit of the IUCN Red List. Together, these analyses illustrate the broader value of taxonomic concept alignment for reproducible biodiversity science, conservation, and biodiversity data integration in an era of rapid taxonomic change.
+
+
+________________
+
+
+The Bat Taxonomic Alignment (BTA) Tool
+The Bat Taxonomic Alignment (BTA) was developed through a three-stage workflow comprising the acquisition and digitization of taxonomic authorities, alignment of taxonomic concepts across classifications, and dissemination of the resulting resource as a version-controlled, open-access dataset (Figure 2). Detailed descriptions of each component of the framework are provided below. Definitions of key taxonomic concept alignment terms are provided in Supplementary 1.
+  
+
+Figure 2. Workflow of the Bat Taxonomic Alignment[n]. The BTA integrates taxonomic treatments from historical and contemporary authorities, reconciles taxonomic concepts through a combination of automated matching and expert review, and disseminates the resulting concept-alignment framework as a versioned, open-access resource. Historical and legacy authorities were digitized and standardized alongside contemporary digital taxonomies, enabling taxonomic concepts to be linked across 45 years of bat systematics. The resulting framework preserves provenance, documents concept relationships, and supports FAIR (Findable, Accessible, Interoperable, and Reusable) dissemination through versioned releases on Zenodo.
+
+
+Taxonomic scope and authority coverage
+The Bat Taxonomic Alignment (BTA) was developed as a proof-of-concept framework for documenting and reconciling taxonomic concepts across changing classifications and through time. Bats provide an ideal system in which to develop and test such a framework because they have experienced extensive taxonomic revision over recent decades, resulting in substantial changes to species circumscriptions across major taxonomic authorities. Because bats underpin research and decision-making across fields ranging from conservation and biodiversity monitoring to disease ecology and public health, these changes can have far-reaching consequences. Although BTA is developed using bats as a model system, the underlying challenge of reconciling changing taxonomic concepts extends throughout biodiversity science.
+To capture this dynamic history, the BTA incorporates taxonomic treatments from fifteen major authorities spanning 45 years (1980–2025; Table 1). Authorities were selected to represent major milestones in the development of bat taxonomy, including globally recognized taxonomic references, conservation taxonomies, and contemporary digital taxonomic resources. These include successive editions of Mammal Species of the World (MSW), Handbook of the Mammals of the World (HMW), BatNames, the Mammal Diversity Database (MDD), and the IUCN Red List, together with additional authorities that have played important roles in shaping contemporary bat taxonomy. Collectively, these works provide a chronological record of changing species circumscriptions, synonymies, genus assignments, and higher-level classifications, documenting a period during which recognized bat diversity increased from fewer than 1,000 species in the early 1980s to 1,498 species in 2025.
+
+
+Table 1: Taxonomic authorities incorporated into the Bat Taxonomic Alignment (BTA). Chronological overview of the fifteen taxonomic authorities incorporated into the BTA, spanning 1980–2025. Together, these resources document the transition from historical printed classifications to contemporary versioned digital taxonomies and capture a period during which recognized bat diversity increased from 950 to 1,498 species.
+ 
+Taxonomic Authority 
+	Format
+	Acronym
+	Year Published
+	Valid Species Count
+	Citation[o]
+	
+
+	
+
+	A World List of Mammalian Species
+	printed
+	CH1_1980
+	1980
+	950
+	Corbet and Hill 1980
+	
+
+	
+
+	Mammal Species of the World: A Taxonomic and Geographic Reference
+	printed
+	MSW1_1982
+	1982
+	928
+	Honacki et al., 1982
+	
+
+	
+
+	A World List of Mammalian Species 3rd ed.
+	printed
+	CH3_1991
+	1991
+	977
+	Corbet and Hill 1991
+	
+
+	
+
+	Mammal Species of the World: A Taxonomic and Geographic Reference. 2nd ed.: Order Chiroptera
+	printed
+	MSW2_1993
+	1993
+	916
+	Koopman 1993
+	
+
+	
+
+	Chiroptera: Systematics. Handbook of Zoology. Volume VIII Mammalia.
+	printed
+	Koopman_1994
+	1994
+	908
+	Koopman 1994
+	
+
+	
+
+	Mammal Species of the World
+	printed
+	MSW3_2005
+	2005
+	1116
+	Wilson & Reeder 2005
+	
+
+	
+
+	Handbook of the Mammals of the World. Vol. 9, Bats
+	printed/ digitized
+	HMW_2019
+	2019
+	1401
+	Wilson & Mittermeier 2019
+	
+
+	
+
+	Bat Species of the World: A taxonomic and geographic database.
+	digital
+	BatNames_2022
+	2022
+	1526
+	Simmons and Cirranello 2022
+	
+
+	
+
+	Mammal Diversity Database Version 1.9.1
+	digital
+	MDD_2022
+	2022
+	1455
+	Mammal Diversity Database 2022
+	
+
+	
+
+	IUCN Taxonomic Records
+	digital
+	IUCN_2022
+	2022
+	1329[p][q]
+	IUCN 2022
+	
+
+	
+
+	Batnames.org Species List Version 1.4
+	digital
+	BatNames_2023
+	2023
+	1469
+	Simmons and Cirranello 2023
+	
+
+	
+
+	Mammal Diversity Database Version 1.11
+	digital
+	MDD_2023
+	2023
+	1468
+	Mammal Diversity Database 2023
+	
+
+	
+
+	Mammal Diversity Database Version 2.0
+	digital
+	MDD_2025_2.0
+	2025
+	1487
+	Mammal Diversity Database 2025a
+	
+
+	
+
+	Batnames.org Species List Version 1.7
+	digital
+	batnames_2025_1.7
+	2025
+	1487
+	Simmons and Cirranello 2025
+	
+
+	
+
+	Mammal Diversity Database Version 2.2
+	digital
+	MDD_2025_2.2
+	2025
+	1498
+	Mammal Diversity Database 2025b
+	
+
+	
+
+	The resulting framework preserves taxonomic treatments across more than four decades of bat systematics while retaining the original context and provenance associated with each authority. By documenting how species concepts are treated across successive classifications, the BTA provides a foundation for tracking taxonomic change, identifying areas of agreement and disagreement among authorities, and linking historical and contemporary biodiversity data. Detailed descriptions of data acquisition and digitization workflows, dataset standardization procedures, and provenance preservation are provided in Supplementary 2. 
+
+
+Concept alignment framework
+Taxonomic concepts were aligned across successive classifications using a combination of automated matching and manual expert review. The objective was not simply to reconcile name strings, but to determine how species concepts were treated across authorities and through time. The BTA aligns taxonomic concepts across successive authorities by documenting how species treatments change through time. Rather than recording only accepted names, the framework captures the broader taxonomic context associated with each concept, including subspecies, synonyms, alternative names, taxonomic notes, and supporting treatments. This information allows concepts to be traced across classifications even when names, circumscriptions, or taxonomic interpretations change.
+Taxonomic concepts are linked using a standardized set of documented relationships that capture common forms of taxonomic change (Figure 3). These include species splits, species mergers, transfers, spelling changes and nomina dubia. Newly described species represent taxa formally recognized as new to science, whereas species splits and mergers reflect changes in species circumscriptions. Transfers record movement of taxa within the taxonomic hierarchy, typically between genera or higher-level groups. Spelling changes capture orthographic corrections and nomenclatural standardizations, while nomina dubia represent names of uncertain application. Together, these relationships provide a consistent framework for documenting how taxonomic concepts evolve through time.
+
+
+  
+
+Figure 3. Taxonomic concept relationships recorded within the Bat Taxonomic Alignment (BTA). The BTA documents how species concepts change across taxonomic authorities and through time using a standardized set of concept relationships. Illustrated examples include newly described species, species splits, species mergers, transfers, spelling [r]changes, and nomina dubia. By explicitly recording these relationships, the framework links historical and contemporary taxonomic treatments while preserving provenance and the context associated with taxonomic decisions. Bat silhouettes were obtained from PhyloPic.
+
+
+A key feature of the BTA is the preservation of provenance. Rather than replacing historical classifications with a single preferred taxonomy, the framework retains authority-specific treatments together with their associated taxonomic notes, source citations, and supporting information. Complete verbatim treatments are preserved within the dataset, enabling users to examine the original context in which taxonomic decisions were made and to trace the evidence supporting changes in species circumscriptions through time. This allows users to determine, for example, when a species concept was first recognized, which historical concepts contributed to a contemporary species, how different authorities interpreted species limits, and what taxonomic evidence or geographic scope underpinned those decisions. By maintaining direct links to the original treatments, the BTA provides a transparent record of taxonomic reasoning rather than only the final taxonomic outcome.
+The resulting framework functions as an alignment layer among taxonomic authorities rather than a replacement taxonomy. By documenting concept relationships, preserving provenance, and retaining alternative names and treatments, the BTA enables biodiversity data collected under different classifications to be interpreted within an explicit taxonomic context. Detailed descriptions of concept matching procedures, relationship definitions, and manual reconciliation examples are provided in Supplementary 3.
+
+
+Resource format and accessibility
+The BTA is distributed as a version-controlled, open-access resource on Zenodo (Sherman et al., 2025) in both human-readable and machine-readable formats. It can be accessed at: XXX. Each release receives a persistent DOI, enabling users to cite the exact version used in analyses while ensuring that previous versions remain permanently accessible.
+The BTA is a spreadsheet organized around species concepts and consists of four primary components: (i) Valid Names, an interpreted index of species concepts across authorities; (ii) Full Treatments, which preserve verbatim authority-specific taxonomic accounts and supporting notes; (iii) Alternative Names, a comprehensive index of synonyms, subspecies, misspellings, abbreviations, and historical name variants; and (iv) concept relationship tables documenting how species concepts change across authorities and through time. An overview of the column layout and contents is summarized in Table 2.
+________________
+
+
+Table 2. Overview of the principal components and fields contained within the Bat Taxonomic Alignment (BTA). This table describes the structure of the BTA and the fields used to record taxonomic concepts, authority-specific treatments, concept relationships, provenance, and alternative names.
+BTA Columns
+	Brief explanation of column contents
+	A-O 
+	valid names according to each of the fifteen taxonomic authorities
+	Q 
+	Taxonomic Notes (Concatenated) - Consolidated taxonomic notes extracted from source treatments, including supporting rationale, citations, and authority identifiers (e.g. [HMW]) to preserve provenance and facilitate rapid interpretation of taxonomic decisions.
+	S-AL
+	Subspecies and Synonyms – Subspecies and synonyms reported by the source authority. Subspecies are shown in bold and synonyms in italics following MSW conventions; names following a bolded subspecies indicate synonyms associated with that subspecies.
+	AN-AQ
+	Full verbatim species treatment (Corbet and Hill 1980)
+	AH-AY
+	Full verbatim species treatment (Honacki et al., 1982)
+	AZ-BC
+	Full verbatim species treatment (Corbet and Hill 1991)
+	BD-BK
+	Full verbatim species treatment (Koopman 1993)
+	BL-CC
+	Full verbatim species treatment (Koopman 1994)
+	CD-DA
+	Full verbatim species treatment (Wilson & Reeder 2005)
+	DB-EA
+	Full verbatim species treatment (Wilson & Mittermeier 2019)
+	EB-ES
+	Full verbatim species treatment (Simmons and Cirranello 2022)
+	ET-GM
+	Full verbatim species treatment (Mammal Diversity Database 2022)
+	GN-HV
+	Full verbatim species treatment (IUCN 2022)
+	HW-IM
+	Full verbatim species treatment (Simmons and Cirranello 2023)
+	IN-KK
+	Full verbatim species treatment (Mammal Diversity Database 2023)
+	KL-MJ
+	Full verbatim species treatment (Mammal Diversity Database 2025a)
+	MK-NC
+	Full verbatim species treatment (Simmons and Cirranello 2025)
+	ND-PD
+	Full verbatim species treatment (Mammal Diversity Database 2025b)
+	PE
+	Concatenated list of all alternative names
+	PF-TF
+	Agreement Index
+	
+
+Together, these components enable users to track taxonomic concepts across 45 years of bat systematics, trace the provenance of taxonomic decisions, identify alternative treatments, and reconcile biodiversity data collected under different classifications. The resource is accompanied by documentation, version histories, and a video walkthrough, all hosted on Zenodo, to facilitate reuse across biodiversity informatics, conservation, ecological research, and related applications.
+To maximize interoperability, the BTA follows FAIR (Findable, Accessible, Interoperable, and Reusable; Wilkinson et al., 2016) data principles and is designed as a living resource that can be updated as new taxonomic evidence emerges and additional authorities become available.
+
+
+
+
+
+
+________________
+
+
+Applications of the BTA
+A primary application of the BTA is the reconciliation of biodiversity data collected under different taxonomic classifications. By linking taxonomic concepts across successive authorities, the framework enables users to determine how a species was treated at a particular point in time and how that treatment relates to current taxonomy. This allows historical records, publications, museum collections, conservation assessments, field guides, and biodiversity databases to be interpreted within their original taxonomic context while remaining connected to contemporary classifications. 
+To illustrate these capabilities, we present two applications of the framework. First, we quantify patterns of disagreement among major bat taxonomic authorities spanning 45 years of taxonomic revision. Second, we use the framework to audit taxonomic consistency within the IUCN Red List, demonstrating how discrepancies among taxonomic authorities can propagate into biodiversity and conservation infrastructure.
+
+
+Example application 1: Quantifying disagreement among taxonomic authorities
+The BTA vXX was used to align 1,680 epithets and 2,185 binomial combinations[s] across fifteen taxonomic authorities between 1980 and 2025, creating a chronological record of changing species concepts and taxonomic treatments in Chiroptera.
+To quantify agreement among authorities, we calculated an Agreement Index based on pairwise comparisons of aligned taxonomic concepts. For each epithet, authorities were scored as either concordant (0) or discordant (1) in their treatment of the taxon. Disagreement was recorded when authorities differed in their interpretation of a concept, for example when one authority recognized a taxon as a valid species while another treated it as a synonym, subspecies, or alternative taxonomic concept. Summing these pairwise differences provided a measure of taxonomic incongruence among authorities over time, which we visualized as a heatmap (Figure 4).
+  
+
+Figure 4. Taxonomic disagreement among 15 bat taxonomic authorities spanning 1980–2025. Values indicate the number of aligned taxonomic concepts receiving different treatments between pairs of authorities. Higher values indicate greater disagreement in species circumscriptions, synonymies, or taxonomic placement. The heatmap reveals decreasing divergence among recent authorities, but persistent disagreement between the IUCN Red List and contemporary taxonomic authorities, motivating the audit presented in Application 2.
+
+
+Although many species concepts were treated consistently across authorities, substantial disagreement was observed among several modern classifications. For example, 349 disagreements were identified between HMW (2019) and MDD v.2.2 (2025), reflecting extensive recent taxonomic revision. Comparisons involving the IUCN Red List revealed 443 disagreements with BatNames 2025 and 451 disagreements with MDD v.2.2 (2025), highlighting the challenges of maintaining alignment among rapidly evolving taxonomic resources. The BTA identified numerous cases in which identical or similar name strings were associated with different taxonomic concepts across authorities. For example, the IUCN Red List recognizes Lasiurus salinae as a valid species, whereas HMW treats the taxon as Lasiurus blossevillii salinae, reflecting a subspecies-level interpretation. Although the underlying epithet is shared, the taxonomic concepts represented by these treatments differ.
+Together, these results demonstrate that while broad agreement exists across much of bat taxonomy, important areas of disagreement persist among major authorities. By explicitly aligning concepts rather than names, the BTA makes these discrepancies visible and traceable through time.
+
+
+Example application 2: Auditing taxonomic consistency within conservation infrastructure
+The IUCN Red List is among the most widely used biodiversity resources globally and serves as the taxonomic foundation for many conservation assessments, policy decisions, funding mechanisms, and biodiversity databases (CITE CITE). Because taxonomic concepts continue to change through time, maintaining alignment between conservation infrastructure and contemporary taxonomic authorities represents an ongoing challenge (CITE CITE).
+To demonstrate the utility of the BTA for taxonomic auditing, in September 2024 we audited bat taxonomy within the IUCN Red List by comparing species concepts recognized by the IUCN Red List with those recognized by the Mammal Diversity Database (MDD) v2.2 (2025),[t][u] the most recent global mammal taxonomic authority available at the time of the audit. 
+This comparison identified 287 taxonomic [v][w]modifications affecting bat species within the IUCN Red List, representing ~20% of assessed bat species[x][y].[z] The discrepancies spanned multiple categories of taxonomic change, including species splits, newly recognized species absent from IUCN records, generic reassignments, spelling corrections, species mergers, and rank changes (Figure 5).
+  
+
+Figure 5. Categories of taxonomic modifications identified during an audit of bat taxonomy within the IUCN Red List. Comparison of IUCN Red List taxonomic treatments with Mammal Diversity Database (MDD) v2.2 (2025) identified 287 modifications. These discrepancies illustrate how differences among taxonomic authorities can accumulate within downstream conservation infrastructure.
+
+
+One illustrative example involves the Myotis nattereri species complex. While recent authorities such as BatNames and the Mammal Diversity Database recognize several distinct species within this complex, including Myotis hoveli, M. crypticus, M. escalerai, and M. zenatius (e.g., Çoraman et al., 2019), the IUCN Red List continues to retain a broader historical circumscription. Such differences alter the biological entities being assessed and may influence interpretations of geographic range size, conservation status, and management priorities.
+The resulting audit was compiled into a detailed report and submitted to the IUCN bat specialist community for review. In addition to identifying discrepancies, the report provided supporting taxonomic notes, concept relationships, literature references, provenance information, and recommended actions for each affected record. By linking historical and contemporary species concepts within a transparent framework, the BTA enables large-scale taxonomic audits that would otherwise require extensive manual reconciliation. This application demonstrates how concept-level taxonomic alignment can be used not only to compare taxonomic authorities but also to evaluate the consistency of biodiversity infrastructure that depends upon them.
+Discussion
+We developed the Bat Taxonomic Alignment to reconcile taxonomic concepts across fifteen authorities spanning 45 years of bat systematics and to evaluate how changing taxonomies influence biodiversity data through time. Our analyses demonstrate that agreement among taxonomic authorities cannot be assumed, even within a comparatively well-studied mammalian order. Although scientific names are often treated as stable identifiers, the BTA revealed substantial differences in how authorities circumscribe species concepts, assign synonymies, and recognize taxonomic boundaries, with hundreds of conflicting species treatments persisting among contemporary classifications despite increasing efforts toward taxonomic standardization. Application of the framework to the IUCN Red List further identified 287 taxonomic modifications affecting ~20% of assessed bat species, demonstrating how differences among taxonomic authorities can propagate into biodiversity infrastructure. Together, these results highlight a fundamental challenge facing modern biodiversity science: scientific names are frequently used as proxies for biological entities, yet the taxonomic concepts they represent can change substantially through time. By explicitly aligning taxonomic concepts rather than names alone, the BTA makes these changes visible, traceable, and reproducible.
+Although demonstrated here using bats, the challenges identified by this study are not unique to Chiroptera. Similar disagreements among competing taxonomic authorities occur across many groups of organisms, including birds, reptiles, amphibians, plants, fungi, insects, and microbial taxa, where alternative classifications frequently coexist and species circumscriptions continue to evolve (ADD CITATIONS). Anyone working with biodiversity information across long time periods - including researchers, conservation organizations, government agencies, and consultants - must therefore contend with the fact that a scientific name may refer to different biological entities depending on the authority consulted and the date at which a classification was adopted. The resulting ambiguity complicates efforts to integrate biodiversity information across datasets, institutions, and time periods, particularly when historical records are interpreted using contemporary taxonomic frameworks.
+Our IUCN audit illustrates how these discrepancies can propagate into downstream biodiversity infrastructure. As shown by the modifications identified between the IUCN Red List and MDD v2.2 (2025), taxonomic divergence is not restricted to specialist taxonomic resources but can persist within systems that underpin conservation planning, policy development, funding allocation, and biodiversity monitoring (CITE CITE). Many discrepancies reflected differences in species circumscriptions, including species splits, newly recognized taxa, and alternative interpretations of species limits, thereby altering the biological entities being assessed and potentially influencing estimates of geographic range size, population status, extinction risk, and conservation priority (CITE CITE).
+The patterns identified in the IUCN audit closely mirror the conceptual framework presented in Figure 1. When a historical species concept is subsequently divided into multiple descendant taxa, biodiversity records, conservation assessments, ecological observations, and other downstream datasets may remain linked to the historical name even though the biological entity represented by that name has changed . Such discrepancies are not merely nomenclatural; they alter the units through which biodiversity is measured, monitored, and managed. The implications extend well beyond conservation assessments (McNeely 2002; Schlick-Steiner et al. 2010; Wu et al. 2019; Almeida-Silva et al. 2021[aa]). Ecological niche models, species interaction networks, phylogenetic analyses, genomic repositories, and host–pathogen studies all depend upon accurate taxonomic attribution (Kennedy et al., 2005; Radar et al., 2023). The Miniopterus schreibersii species complex illustrates this challenge because taxonomic revision substantially altered the geographic distribution represented by the species name (Tian et al. 2004[ab]), meaning that historical pathogen records associated with the broader concept (e.g. Zheng et al., 2018) may not necessarily refer to the same biological entity recognized today. Without explicit concept alignment, such changes can obscure host distributions, affect interpretations of disease risk, and complicate comparisons among studies conducted under different taxonomic frameworks (Tsang et al., 2016).
+The discrepancies observed here also highlight broader challenges facing contemporary taxonomic infrastructure. First, many biodiversity resources continue to operate without explicit versioning, despite its importance for retaining provenance links among taxonomic concepts, sources, and rationales (Karbstein et al. 2024). Although several initiatives have adopted version-controlled approaches, including the Mammal Diversity Database (Burgin et al., 2025), ZooBank (Pyle, 2016), Plazi (Agosti et al., 2022), and the Catalogue of Life (Garnett et al., 2020), many datasets and publications do not clearly indicate which taxonomic treatment underlies a record or analysis. The IUCN audit provides a practical example of this challenge. While updates are incorporated through Taxonomic Change Requests and expert review processes, the taxonomic backbone associated with particular assessments is not always explicitly versioned or easily reconstructed retrospectively. There are often substantial delays between the publication of taxonomic revisions and their incorporation into downstream biodiversity resources. During these intervals, newly recognized taxa may be absent from major databases or aggregated under broader taxonomic concepts, potentially obscuring biodiversity patterns and limiting discoverability in data-driven analyses (Garnett & Christidis, 2017; Troudet et al., 2018; GBIF Secretariat, 2025). Versioning is therefore essential not only for reproducibility, but also for documenting how taxonomic concepts change and propagate through biodiversity infrastructure.
+Second, the provenance of taxonomic decisions is often difficult to trace. Many authoritative classifications are maintained by relatively small expert communities operating under substantial resource constraints that limit data sharing and transparency (Bruneman et al., 2008; Garnett, 2020; Pyle, 2016; Agosti, 2022; Ebach et al., 2011). Expert oversight remains indispensable, yet the rationale underlying taxonomic changes is not always archived in a manner that can be readily consulted by downstream users. Researchers frequently encounter updated classifications without access to the discussions, evidence, alternative treatments, or historical context that informed those decisions. Consequently, disagreements among authorities may be visible, but the reasons underlying those disagreements can remain difficult to evaluate. By preserving authority-specific treatments, taxonomic notes, literature references, and concept relationships, concept-alignment tools such as the BTA attempt to make this provenance more transparent and accessible.
+Third, access to taxonomic knowledge remains uneven. Important taxonomic references may be difficult to obtain, unavailable in machine-readable formats, or inaccessible because of financial, linguistic, geographic, or institutional barriers (CITE CITE ; Karbstein et al. 2024; Cornelius et al., 2025). The incorporation of historical authorities into the BTA required substantial digitization and semantic annotation efforts, highlighting the broader challenge of mobilizing legacy taxonomic knowledge for contemporary biodiversity science. The digitization of Handbook of the Mammals of the World treatments provides one example of the effort required to transform foundational taxonomic resources into reusable digital knowledge. Similar barriers continue to limit access to the taxonomic information needed to interpret biodiversity data consistently across regions and disciplines (CITE CITE).
+Collectively, these challenges suggest that biodiversity infrastructure is increasingly constrained by workflows built around static taxonomic lists. As taxonomic discovery accelerates through the integration of molecular, morphological, ecological, and biogeographic evidence, maintaining consistency across databases, conservation assessments, museum collections, and analytical pipelines requires mechanisms capable of accommodating continual revision while preserving historical context. Taxonomic updates are most useful when they are versioned, citable, machine-readable, and accompanied by sufficient detail to enable downstream users to understand and reproduce taxonomic decisions. One potential path forward is the adoption of more formalized and regularly published taxonomic update workflows, similar to those used by initiatives such as the Catalogue of Fishes (CITE), the IOC World Bird List (CITE), and the International Committee on Taxonomy of Viruses (CITE) where changes are documented, archived, and disseminated through versioned releases. Such approaches improve transparency, facilitate interoperability among biodiversity resources, and provide a stable foundation for tracking taxonomic concepts through time.
+The BTA represents one approach to addressing these challenges, serving as an alignment layer among taxonomic authorities. By organizing authority-specific treatments into a structured, versioned framework, the BTA enables users to reconcile historical and contemporary classifications without losing the context in which records were originally generated. Users can determine how a species was treated by a particular authority, identify alternative names associated with a concept, trace taxonomic changes through time, and translate records collected under older classifications into contemporary taxonomic frameworks. These capabilities are particularly relevant for historical literature, museum collections, biodiversity databases, field guides, and conservation assessments that continue to rely upon classifications that may no longer reflect current understanding.
+More broadly, the principles underlying the BTA - concept alignment, provenance preservation, versioning, and interoperability - are applicable across biodiversity science and other disciplines that rely on evolving classification systems. As biological disciplines increasingly rely upon large, interconnected datasets, taxonomic concepts must become as traceable and interoperable as occurrence records, genomic sequences, ecological observations, and conservation assessments. The challenge addressed here is therefore not fundamentally about bat taxonomy, but about ensuring that biological knowledge remains interpretable as our understanding of biodiversity continues to change. By documenting relationships among taxonomic concepts across 45 years of bat systematics, the BTA provides a practical framework for reconciling changing classifications while preserving provenance, ultimately supporting more reproducible biodiversity science, conservation assessment, and data integration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References[ac]
+
+
+[a]genomics can be used for evolutionary, conservation, epidemiology, etc, I see it more as a tool
+[b]we are not really revising species concepts in the BTA. but now I have the pressing question, what species concept is the BTA using? In case of taxonomic disagreements, what does the BTA decide?
+[c]do any of these species change IUCN category? E.g. from Endangered to Critically Endangered, or somethis similar?
+[d]Note for Ariadna: check if the text below specifies how many of these are "Not Evaluated, Data Deficient, Least Concern, Near Threatened, Vulnerable, Endangered, Critically Endangered, Extinct in the Wild and Extinct"
+[e]can we cite an example? Would this one fit? https://www.nature.com/articles/s41467-024-46979-1
+[f]Bayraktarov, Elisa, Glenn Ehmke, James O'Connor, Emma L. Burns, Hoang A. Nguyen, Louise McRae, Hugh P. Possingham, and David B. Lindenmayer. "Do big unstructured biodiversity data mean more knowledge?." Frontiers in Ecology and Evolution 6 (2019): 239.
+[g]Heberling, J. Mason, Joseph T. Miller, Daniel Noesgaard, Scott B. Weingart, and Dmitry Schigel. "Data integration enables global biodiversity synthesis." Proceedings of the National Academy of Sciences 118, no. 6 (2021): e2018093118.
+[h]define or give example
+[i]Zachos, Frank E. "(New) Species concepts, species delimitation and the inherent limitations of taxonomy." Journal of genetics 97, no. 4 (2018): 811-815.
+[j]Is this the same as 'name string'?
+[k]Page, Roderic DM. "Biodiversity informatics: the challenge of linking data and the role of shared identifiers." Briefings in bioinformatics 9, no. 5 (2008): 345-354.
+[l]perhaps this would be a suitable citation https://doi.org/10.1093/bib/bbn022
+[m]is this treatment or concept?
+
+
+May be we should add a paragraph on the publication of taxonomic names to complement the discussion on species concepts.
+
+
+Publications use taxonomic names, but only the first, sometimes called protologue, is the same as the original taxonomic concept. All the subsequent refer to it, but are an interpretation of the former. More formally, a taxonomic name then should read Rhinolophus silvestris Aellen, 1959 sec. Burgin, 2019, ie the R. silvestries used by Burgin 2029
+
+
+What Burgin means by this is given in the taxonomic treatments he published https://zenodo.org/records/3808827 in the HBMW vol 1
+[n]Maybe we could relabel 1.2.3 in the figure so that they match the section headings:
+
+1. Taxonomic scope and authority coverage 
+2. Concept alignment framework 
+3. Resource format and accessibility
+[o]Add full citations as references in Zotero, including access dates
+[p]Are we sure this is correct? in IUCN 2022 there were 1329 species assessed and recognized? 
+
+
+The current number is 1336. This seems like a small increase in 4 years?
+[q]You are correct! This should be 1,156. I'm going to recheck all these numbers...
+[r]I'm not sure about this visual representation
+[s]Does this mean everything else is stable? Perhaps also include those other numbers?
+[t]this can't be right... the audit work was done in September 2024 before this MDD version was released no?
+[u]You are correct, I originally used this version (Mammal Diversity Database. (2023). Mammal Diversity Database (Version 1.11) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7830771 released 15 April 2023), but as MDD and IUCN were being updated, I applied those changes to our records. I know that is not the best for our arguments, but I was working in real time. I figured the IUCN people would appreciate up-to-date data instead of following versions on principal.
+[v]Why doesn’t this number match the heatmap comparison?
+[w]why is this number much lower than any of the numbers comparing IUCN to other taxonomies in the heatmap? even though some are from after the audit was done? Is that because more species are recognized and this inflates the number?
+[x]What number was used for currently recognized bat species? Maybe it would be better to use the % of IUCN assessed species at the time of the audit to keep it consistent
+[y]changed but im worried about this percentage as it begs the question of what was the actual number at the time of the audit?
+[z]After live updates? How do we reconcile the ultimately the updates version numbers that don't match the original comparison from the BTA...TALK ABOUT THIS ON WEDNESDAY
+[aa]Check these still fit in here. Text has been edited.
+[ab]Add other references of this split
+[ac]Aja - can you add once Zotero has all citations?

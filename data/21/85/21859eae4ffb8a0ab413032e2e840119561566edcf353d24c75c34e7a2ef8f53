@@ -1,0 +1,107 @@
+**Supplementary for JOURNAL\!\!  (column definitions and original documents will be add to the new version 6 of BTA publication on Zenodo \- coming soon)**
+
+**Supplementary 1\. Glossary of taxonomic concept alignment terms**
+
+Table S1. Glossary of taxonomic concept alignment terms used in the Bat Taxonomic Alignment (BTA). Definitions of key terms used throughout the BTA framework, including concepts related to taxonomic relationships, provenance, authority-specific treatments, and taxonomic change through time.
+
+| Term | Definition | Citation  |
+| :---- | :---- | :---- |
+| Accepted name | the scientific name of a taxon that has been formally chosen among alternative names (synonyms) by scientific experts. | Sandall et al., 2023 |
+| Binomial nomenclature | the system of naming species using two Latin terms, genus (rank above species) and specific epithet. | Sandall et al., 2023 |
+| Circumscription | the diagnostic limits of a taxon, which separate the individuals that belong to it from all other individuals in the opinion of an author; the circumscription adopted by a particular author may be determined by study of the descriptions, accounts of the range of variation, cited synonymy, cited specimens including types, and any other comments made by the author in the protologue (q.v.). | Hawksworth etal., 2021 |
+| Darwin Core Archive (DwCA) | a draft standard that allows the transfer of biodiversity information from one machine to another. It takes the form of a set of text files with a simple descriptor to provide information as to how the file is organized. Data files are arranged in a star-like manner, with one core data file surrounded by any number of “extensions” (http://rs.tdwg.org/dwc/terms/guides/text/).. Each extension record (or “extension file row”) points to a record in the core file; in this way a DWCA package might contain a list of species as one file, to which is attached another file with occurrence information, or further files dealing with other types of information. | GNA (Global Names Architecture), 2020 |
+| DOI | DOIs are persistent identifiers used, for example, by publishers for articles. |   GNA (Global Names Architecture), 2020 |
+| Epithet | the second part of the latin ‘binomial’ for species. |   GNA (Global Names Architecture), 2020 |
+| Fuzzy matching | A technique of comparing name strings that allows for controlled degrees (one character, two characters) or mis-match. The intention is to identify different name strings as lexical variants \- caused through typographical, transliteration, or OCR errors \- for the same name. |   GNA (Global Names Architecture), 2020 |
+| Harmonization | process of joining and integrating data from multiple sources to make a unified dataset. |  Sandall et al., 2023 |
+| Lineage | a series of entities (e.g. organisms, populations) that form a single unbroken and unbranched sequence of ancestors and descendants; that a lineage is unbranched does not deny the existence of side-branches, which are not parts of the lineage in question, or of branching at lower organizational levels (e.g. organelle lineages within a population lineage); there may even be branching at the organizational level in question as long as it is judged to be temporary. |  Hawksworth etal., 2021 |
+| Name string | The combination of characters, numbers, punctuation, spaces, symbols, and abbreviations that is used to represent a name. We currently identify the following classes of name-strings: (1) scientific names; (2) common or vernacular names; (3) surrogates and (4) identifiers. The same name may be represented by many lexical variants of the same name-string. |   GNA (Global Names Architecture), 2020 |
+| Parsing | Use of a software tool that breaks a name into its semantically discrete elements (such as genus, species epithet, infraspecific epithet, annotations, authors, dates of authorship, hybrid marks and so on. |   GNA (Global Names Architecture), 2020 |
+| Relational qualifiers | Qualifiers are additional relation-entity pairs that provide context or further information about triplet, which provide valuable tools for representing context such as experimental conditions or provenance |  Sun, 2025 |
+| Resolution | Resolution extends the process of ‘reconciliation’, presenting the name that is endorsed by a preferred taxonomic authority (his, her, or their view of the ‘right” scientific name for a taxon). |   GNA (Global Names Architecture), 2020 |
+| Scientific name | A name for a taxon that is formed in Latin and complies with a relevant code of nomenclature or otherwise meets the expectations of the nomenclatural and taxonomic communities. A scientific name may or may not include the names of the authors who created the name, basionym, or combination \- with or without the dates of those events. The name may be annotated with terms such as subsp. (see examples under canonical name). Taxonomists establish which scientific name is the correct one to apply to a taxon, but different taxonomists may disagree in respect of the correct name. Latinized names may include authors, dates of authorship, and various annotations. ‘Parsing’ can reveal all semantic elements, scientific name can be rendered to a ‘canonical’ form of only latinized elements. |   GNA (Global Names Architecture), 2020 |
+| Sensu | In the sense of; usually used to point to one person’s interpretation of a meaning. |   GNA (Global Names Architecture), 2020 |
+| Species | a group of organisms that can be considered one taxonomic unit, typically as the lowest taxonomic rank that has an accepted name. |  Sandall et al., 2023 |
+| Species concept | the conceptual framework for forming hypotheses that represent species. Biological or phylogenetic species concepts are examples. See also taxon concept. |  Sandall et al., 2023 |
+| Species splitting and lumping | used in the context of changing delimitation of a species due to varying taxonomic opinion, whereby one species may be divided into several species, or several species are grouped into one. This is distinct from the process of describing new species or adding new synonyms. |  Sandall et al., 2023 |
+| Specimen | a physical example of an organism. |  Sandall et al., 2023 |
+| Stable identifiers | a unique, persistent, and unchanging label assigned to a digital or physical entity (e.g., database records, biological specimens, UI components) to ensure it can be consistently referenced over time. Unlike mutable names, these identifiers—often URIs or UUIDs—remain valid despite database updates, re-indexing, or location changes. |  Consortium of European Taxonomic Facilities (CETAF), 2026 |
+| Standards | Information standards are agreed conventions by which digital information can be organised. Standards are important to machine-to-machine dialog, allowing one machine to release information in a way that other machines can understand. Semanticization is dependent on standards. The primary body developing standards for biology is TDWG, but many other projects have developed in-house standards. |   GNA (Global Names Architecture), 2020 |
+| Synonym | an alternative name to the accepted name. In a taxonomic backbone scheme, synonyms are appended under accepted names as a ‘child’ term. |  Sandall et al., 2023 |
+| Systematics | That component of the discipline of taxonomy that relates to the arrangement of taxa , normally within hierarchies or classifications. |   GNA (Global Names Architecture), 2020 |
+| Taxon | a term denoting a commonly recognized unit or collective of organisms. Also called a taxonomic group. |  Sandall et al., 2023 |
+| Taxon concept | a set of organisms and their characteristics that form a hypothesis representing a taxon and distinguishing it from other taxa, which can vary between particular authors and can change over time with new data or specimen evidence. See also species concept. |  Sandall et al., 2023 |
+| Taxonomic backbone | a data structure for matching taxonomic synonyms to accepted names within a hierarchy. |  Sandall et al., 2023 |
+| Taxonomic Classifications | (1) the systematic grouping of items. (2) a system in which items may be grouped. (3) the arrangement of material for ease of discussion or reference, not necessarily in a manner reflecting relationships or ranks; i.e. a system (q.v.) (4) a system (q.v.) so produced, the fundamental product of taxonomy. |  Hawksworth etal., 2021 |
+| Taxonomic name | recognized scientific name of an organism, typically a binomial name including genus and species. |  Sandall et al., 2023 |
+| Taxonomic treatment | publications or (more frequently) sections of publications documenting the features or distribution of a related group of organisms (called a “taxon”, plural “taxa”) in ways adhering to highly formalized conventions. |  Catapano, 2019 |
+| Transcription | (1) to copy exactly from one written work to another. (2) the rendering in written form of human speech, especially of languages employing ideographic or phonetic characters. |  Hawksworth etal., 2021 |
+| Type specimens | A single specimen which acts as the defining reference point for the application of a name of a species or an infraspecific taxon. Type specimens are usually retained within Museums and herbaria. |   GNA (Global Names Architecture), 2020 |
+| Valid name | A term used by zoologists and virologists to refer to a code-compliant name of an organism. It does not mean that the name is currently endorsed as the best name for that taxon. |   GNA (Global Names Architecture), 2020 |
+
+ 
+
+ 
+
+**Supplementary 2\. Taxonomic authority acquisition and digitization**
+
+Species-level circumscriptions from each authority were extracted and incorporated into the Bat Taxonomic Alignment (BTA) through a multi-stage workflow consisting of: (1) acquisition of taxonomic authorities through downloads, database exports, or digitization of printed resources; (2) conversion of authority-specific treatments into machine-readable formats; and (3) incorporation into a common framework for subsequent concept alignment and comparative analyses.
+
+**S2.1 Acquisition of taxonomic authorities**
+
+The effort required to acquire taxonomic treatments varied substantially across the selected authorities. Contemporary digital resources such as the Mammal Diversity Database (MDD) were available in tabular form and required relatively little reformatting prior to incorporation into the BTA. BatNames versions were acquired directly as CSV exports from the underlying database infrastructure, with version numbers and timestamps recorded for each download when available. Access to these backend exports was facilitated by a coauthor involved in the management of BatNames. In contrast, several other authorities existed only as printed resources and required substantial effort to digitize and convert into machine-readable formats (see S2.2).
+
+The IUCN Red List of Threatened Species presents a particular challenge because individual records and database releases do not currently operate under a static versioning system. Consequently, a time-stamped archival approach was required to maintain reproducibility and ensure that taxonomic audits can be reconciled with the specific version of the Red List available at the time of analysis. Documenting these temporal snapshots was essential for evaluating ingestion gaps between the IUCN Red List and other authorities such as BatNames and the Mammal Diversity Database.
+
+**S2.2 Digitization of historical authorities and printed resources**
+
+Several foundational bat taxonomic references were originally published only in print form and have subsequently been digitized through community biodiversity informatics initiatives. Historical authorities including Corbet & Hill (1980, 1991), Mammal Species of the World (MSW) editions 1 and 2, and Koopman (1994) were incorporated into the BTA through the Hesperomys database (Zijlstra, 2025a), which provides structured digital representations of historical mammal taxonomies and maintains close alignment with the Mammal Diversity Database.
+
+A more extensive workflow was required for Handbook of the Mammals of the World (HMW). Printed HMW volumes were digitized by Picturae, a company specializing in large-scale digitization of museum collections and scientific materials. Approximately 5,000 species treatments were converted into searchable PDF files. These PDFs were subsequently parsed and annotated using Plazi's GoldenGate mark-up editor (CITE) to generate XML files containing machine-readable descriptions of individual HMW treatments. The resulting treatments were uploaded to Plazi's Treatment Bank infrastructure and deposited as openly accessible taxonomic treatments (e.g., Burgin, 2019).
+
+Digitized representations of the HMW treatments were subsequently downloaded from a versioned copy of Treatment Bank (Plazi Community, 2025\) and converted into comma-separated value (CSV) files using custom scripts (NEED to publish [https://jhpoelen.nl/hmw](https://jhpoelen.nl/hmw) as a data publication on Zenodo or similar). These structured outputs enabled direct incorporation of HMW taxonomic treatments into the BTA framework. We recognize that relatively few organizations possess the combination of resources, technical expertise, infrastructure, and funding necessary to undertake such a time-intensive and specialized digitization workflow. Nevertheless, the process transformed an important taxonomic reference into a reusable digital resource for biodiversity informatics applications and future taxonomic syntheses. HMW treatments are now openly accessible under an open-access license (Agosti & Egloff, 2009), facilitating their reuse in resources such as the BTA.
+
+ 
+
+ 
+
+ 
+
+**Supplementary 3\. Taxonomic Concept Matching and Alignment**
+
+**S3.1 Identification of corresponding taxonomic concepts**
+
+Following acquisition and digitization of taxonomic authorities (Supplementary 2), taxonomic concepts were aligned across successive classifications spanning 45 years using a combination of automated matching, synonymy information, subspecies treatments, taxonomic notes, and manual expert review.
+
+Custom scripts (available on GitHub; Zijlstra, 2025b) were used to parse name lists from individual authorities and match them against Hesperomys database records (Zijlstra, 2025a). Matching prioritized exact name strings but incorporated secondary heuristics, including genus-level reconciliation, where appropriate. Automated matching provided an efficient mechanism for identifying obvious correspondences among authorities but was insufficient for many taxonomic treatments that had undergone substantial revision.
+
+The framework was designed to capture not only accepted species names, but also subspecies, synonyms, alternative combinations, taxonomic notes, and supporting literature. Integrating these fields enabled rapid identification of agreement among authorities, interpretation of epithet usage, and documentation of changing taxonomic concepts through time.
+
+Where possible, corresponding concepts were identified through direct comparison of accepted names and synonymies. However, because species splits, mergers, rank elevations, and nomenclatural revisions are common outcomes of ongoing taxonomic research, many concepts required additional manual interpretation. Supporting taxonomic notes and published literature were therefore examined to determine how historical and contemporary concepts were related.
+
+**S3.2 Assignment of concept relationships**
+
+Once corresponding concepts had been identified, relationships among taxonomic concepts were classified using the standardized categories described in Figure 2 of the main manuscript. These included newly described species, species splits, species mergers, transfers, spelling changes, nomina dubia, and alternative taxonomic treatments.
+
+Relationship assignments were based on evidence provided within the source authorities, including synonymies, taxonomic notes, geographic scope, and supporting literature. Species splits were recorded when a historical concept was divided into two or more contemporary taxa, whether through elevation of former subspecies, resurrection of synonyms, or recognition of previously unrecognized lineages. Species mergers were recorded when multiple previously recognized species were treated as a single taxon. Transfers captured changes in hierarchical placement, including reassignment among genera or higher taxonomic ranks. Additional categories documented nomenclatural revisions and names of uncertain application.
+
+Since merges, splits, and rank elevations frequently alter the status of individual epithets, current treatments were recorded within the framework using standardized indicators such as "\[synonym of\]" or by retaining trinomials where a subspecies rank remained appropriate. These annotations facilitated consistent tracking of concept relationships across authorities.
+
+By explicitly recording these relationships, the BTA preserves the historical pathways through which contemporary species concepts emerged and allows users to reconstruct taxonomic change across successive authorities.
+
+**S3.3 Complex and ambiguous alignments**
+
+Automated matching alone was insufficient for many taxonomic treatments. In cases where direct correspondence could not be established through name strings or synonym lists, concepts were reconciled manually using all available contextual information.
+
+For example, Corynorhinus leonpaniaguae, a recently described species derived from populations formerly assigned to C. mexicanus (CITE), could not be identified automatically without interpretation of the accompanying taxonomic notes in the Mammal Diversity Database. Similarly, Platyrrhinus guianensis has historically been confused with P. helleri and P. recifinus (CITE) and required manual examination of synonymies and supporting comments to determine the appropriate alignment among authorities.
+
+These examples illustrate why concept alignment cannot rely solely on name matching. Taxonomic concepts frequently change through reinterpretation of geographic distributions, morphological evidence, molecular datasets, or combinations thereof. Preserving supporting taxonomic information was therefore essential for accurate reconciliation.
+
+**S3.4 Alternative interpretations and taxonomic disagreement**
+
+A central design principle of the BTA was the preservation of alternative taxonomic interpretations. Rather than enforcing a single preferred taxonomy, the framework retains authority-specific treatments and records areas of agreement and disagreement among classifications.
+
+For example, BatNames 2022 recognizes Artibeus intermedius as a valid species, whereas HMW treats “intermedius” as a synonym of Artibeus lituratus palmarum. Similarly, BatNames 2022 and subsequent releases recognize Dermanura bogotensis as a valid species, whereas HMW treats the taxon as Artibeus bogotensis while noting alternative generic placements based on molecular evidence. Such differences are preserved within the framework rather than resolved through forced consensus.
+
+Retaining competing interpretations allows users to evaluate how species concepts have been treated by different authorities, identify the evidence supporting alternative classifications, and understand the uncertainty associated with taxonomic decisions.
+
