@@ -135,9 +135,12 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
   var isSameName = function(nameA, nameB) {
 
-    let normalizeNAs = function(name) { 
-       let synonym = name || name.replace(/.*synonym of.*/, "N/A");
-       return synonym || synonym.replace(/[ ]*/,"N/A");
+    let normalizeNAs = function(name) {
+       if (name == undefined) {
+         return name;
+       } else {
+         return name.replace(/.*synonym of.*/,"N/A").replace(/[ ]*/, "N/A");
+       }
     }
 
     return normalizeNAs(nameA) === normalizeNAs(nameB);
