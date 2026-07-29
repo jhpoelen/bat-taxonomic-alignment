@@ -143,7 +143,8 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
        }
     }
 
-    return normalizeNAs(nameA) === normalizeNAs(nameB);
+    let isSameName = normalizeNAs(nameA) === normalizeNAs(nameB);
+    console.log(nameA + " and " + nameB + " are " + (isSameName ? "the same" : "not the same"));
   }
 
   const heatmapFragment = new DocumentFragment();
