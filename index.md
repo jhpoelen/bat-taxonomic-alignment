@@ -139,7 +139,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
        if (name == undefined) {
          return name;
        } else {
-         return name.replace(/.*synonym of.*/,"N/A").replace(/[ ]*/, "N/A");
+         return name.replace(/.*synonym of.*/,"N/A").replace(/^\s*$/, "N/A");
        }
     }
 
