@@ -1,16 +1,16 @@
-authorityCode,zenodoDoi
-1980_CH1,https://doi.org/10.5281/zenodo.17260800
-1982_MSW1,https://doi.org/10.5281/zenodo.13445249
-1991_CH3,https://doi.org/10.5281/zenodo.18023078
-1993_MSW2,https://doi.org/10.5281/zenodo.13424577
-1994_Koopman,https://doi.org/10.5281/zenodo.13422270
-2005_MSW3,https://doi.org/10.5281/zenodo.13520803
-2019_HMW,https://doi.org/10.5281/zenodo.20290441
-2022_BatNames,https://doi.org/10.5281/zenodo.6857865
-2022_IUCN,https://iucn.org
-2022_MDD,https://doi.org/10.5281/zenodo.7358650
-2023_BatNames,https://doi.org/10.5281/zenodo.8136157
-2023_MDD,https://doi.org/10.5281/zenodo.7830771
-2025_batnames_1_7,https://doi.org/10.5281/zenodo.14796586
-2025_MDD_2_0,https://doi.org/10.5281/zenodo.15007505
-2025_MDD_2_2,https://doi.org/10.5281/zenodo.15659662
+authorityCode,zenodoDoi,filename,signature
+1980_CH1,https://doi.org/10.5281/zenodo.17260800,ch1.xlsx,hash://sha256/3142825234a5ddf73d821fc742f2e6a7856a547d0fd4f4e3806bebd9fc4df5ff
+1982_MSW1,https://doi.org/10.5281/zenodo.13445249,msw1.xlsx,hash://sha256/726c07c0563303d3b1d4706bca01841b244bfc906efbf1f7cba04dbaae1cefb9
+1991_CH3,https://doi.org/10.5281/zenodo.18023078,ch3.xlsx,hash://sha256/e495fd19624e5cf85e71c709763a2eb1aa9851823f9cfb20faa931f0dbb0a323
+1993_MSW2,https://doi.org/10.5281/zenodo.13424577,msw2.csv,hash://sha256/cde74fd5d1a82e57d51228cab017d98c576eb0e63c15ea7b3f9a4b7eef4f90c7
+1994_Koopman,https://doi.org/10.5281/zenodo.13422270,koopman1994.xlsx,hash://sha256/77eb48b57e98310f353e10504c4cc802f0d18f6f42ef916483bcb1590741025b
+2005_MSW3,https://doi.org/10.5281/zenodo.13520803,38 Chiroptera final MSW3 database.xls,hash://sha256/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2019_HMW,https://doi.org/10.5281/zenodo.20290441,HMW_2019_Handbook Treatments.xlsx,hash://sha256/e19f999c3de06ede3bcd214f034d6508cdb8534e70abc0660b1ef261d95ed194
+2022_BatNames,https://doi.org/10.5281/zenodo.6857865,batnames_2022_chiroptera2022Oct11.xlsx,hash://sha256/c4140200db59d2cba88138607d9db27aecba75c37bf0013cbc07596d044e2ae9
+2022_IUCN,,IUCN_2022_assessments.xlsx,hash://sha256/0a6fcfb5a58794b10320f9fbac54e645b2661a63d74ca7589c7dff9355308a71
+2022_MDD,https://doi.org/10.5281/zenodo.7358650,MDD_v1.9.1_6596species.csv,hash://sha256/12d933e2b8f2dd2e6b4a2e05d44e0adf66d658e0adf606707b65c36c1450293d
+2023_BatNames,https://doi.org/10.5281/zenodo.8136157,chiroptera2023-10-03batnames.xlsx,hash://sha256/bc3a1707341586fe7ebc084c5a4bf03230e45cc8878d6e8b7d4571ed74926f1a
+2023_MDD,https://doi.org/10.5281/zenodo.7830771,MDD_v1.11_6649species.csv,hash://sha256/62d4c65140149e8193ec779b299567969205c59c7ca5f469a51ef7400ed38b99
+2025_batnames_1_7,https://doi.org/10.5281/zenodo.14796586,batnames_2025_1.7_Chiroptera2025-06-03.xlsx,hash://sha256/748eb91aada827b663602c80917b829e9b54205857b321b47bb561e194a7b633
+2025_MDD_2_0,https://doi.org/10.5281/zenodo.15007505,MDD_v2.0_6759species.csv,hash://sha256/e4688e15b9bfe723bd637fca72a69dbfdb641af4e043ebf1280d123f8f5c6b1e
+2025_MDD_2_2,https://doi.org/10.5281/zenodo.15659662,MDD_v2.2_6815species.csv,hash://sha256/2d949364a9b318ebbc56afaf0f82dada4f4f6c3758a7f2385f78a32e4a93fee0
