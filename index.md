@@ -86,12 +86,13 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   authorities.forEach(function(authority) {
     let referenceElem = references.appendChild(document.createElement("div"));
     referenceElem.setAttribute("id", authority.authorityCode);
-    let reference = references.appendChild(document.createElement("a"));
+    let elemType = authority.zenodoDoi == null ? "div" : "a";
+    let reference = references.appendChild(document.createElement(elemType));
     reference.appendChild(document.createElement("div")).textContent = (authority.authorityCode + " " + authority.zenodoDoi);
     reference.setAttribute("href", authority.zenodoDoi);
     reference.setAttribute("id", authority.authorityCode);
     let data = references.appendChild(document.createElement("a"));
-    data.appendChild(document.createElement("div")).textContent = (authority.filename + " " + authority.signature);
+    data.appendChild(document.createElement("div")).textContent = ("data: " + authority.filename + "with signature " + authority.signature);
     data.setAttribute("href", "sources/" + encodeURI(authority.filename));
   });
 
