@@ -18,9 +18,11 @@ The taxonomic boundaries of species and higher-level taxa change relatively freq
 
 {%- assign BTA = site.data.names | first | map: "treatmentId" | split: "sha256/" | last | slice: 0,8 | prepend: "BTA@" %}
 
+[```table1```](#table1) / [```table2```](#table2) / [```table3```](#table3) / [```references```](#references)
+
 Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_url }}), [join our weekly meeting](https://globalbioticinteractions.org/covid19), or [open an issue]({{ site.new_issue_url }}).
 
-<table><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and <a href="https://jsonlines.org">JSON Lines</a> formats.</em></caption><thead><th>name</th><th>description</th></thead>
+<table id="table1"><caption>Table 1. <em>{{ BTA }} Resources in XSLX, Google sheet, TSV, CSV, and <a href="https://jsonlines.org">JSON Lines</a> formats.</em></caption><thead><th>name</th><th>description</th></thead>
 <tbody>
     <tr><td><a href="./bta.xlsx">bta.xlsx</a></td><td>in proprietary Excel format.</td></tr>
     <tr><td><a href="https://docs.google.com/spreadsheets/d/1MhHVVw5HZ6KvQj_hje-UmBxMe0k_yLo-3z-YLCtxfks">Google sheet</a></td><td>Read-only version hosted on Google sheets</td></tr>
@@ -48,11 +50,11 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
 
 
-<table><caption>Table 2. <em>{{ BTA }} agreement matrix. Each cell indicates the number of concept <b>dis</b>agreements across catalog pairs. Total number of concepts in {{ BTA }} is <b><span id="totalConcepts">-</span></b>.</em> Yellow/light colors indicate more agreement, green/dark shades indicate less agreement.</caption><thead id="matrixHeader"></thead><tbody id="matrix"></tbody></table>
+<table id="table2"><caption>Table 2. <em>{{ BTA }} agreement matrix. Each cell indicates the number of concept <b>dis</b>agreements across catalog pairs. Total number of concepts in {{ BTA }} is <b><span id="totalConcepts">-</span></b>.</em> Yellow/light colors indicate more agreement, green/dark shades indicate less agreement.</caption><thead id="matrixHeader"></thead><tbody id="matrix"></tbody></table>
 
 
 
-<table>
+<table id="table3">
   <caption>Table 3. <em>{{ BTA }} treatments, agreement index, and their associated names. The agreement index is ratio of the number of pairwise agreements for a concept versus the total number of possible pairwise agreements. Yellow/light colors indicate more agreement, green/dark shades indicate less agreement. Download table (minus agreement index) as <a href="{{ "/names.tsv" | prepend: site.data_url }}">tsv</a>, <a href="{{ "/names.csv" | prepend: site.data_url }}">csv</a>, or <a href="{{ "/names.json" | prepend: site.data_url }}">json</a>.</em></caption>
   <thead><th>treatmentId</th><th>agreementIndex</th><th>name</th><th>accordingTo</th></thead>
   <tbody>
@@ -82,10 +84,15 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var references = document.querySelector("#references");
   
   authorities.forEach(function(authority) {
+    let referenceElem = references.appendChild(document.createElement("div"));
+    referenceElem.setAttribute("id", authority.authorityCode);
     let reference = references.appendChild(document.createElement("a"));
     reference.appendChild(document.createElement("div")).textContent = (authority.authorityCode + " " + authority.zenodoDoi);
     reference.setAttribute("href", authority.zenodoDoi);
     reference.setAttribute("id", authority.authorityCode);
+    let data = references.appendChild(document.createElement("a"));
+    data.appendChild(document.createElement("div")).textContent = (authority.filename + " " + authority.signature);
+    data.setAttribute("href", "sources/" + encodeURI(authority.filename));
   });
 
   var concepts = {{ site.data.names-wide | jsonify }};
