@@ -140,7 +140,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
        return synonym || synonym.replace(/[ ]*/,"N/A");
     }
 
-    return normalizeNAs(nameA) === normalizeNAs(nameB_synonymBeNA);
+    return normalizeNAs(nameA) === normalizeNAs(nameB);
   }
 
   const heatmapFragment = new DocumentFragment();
