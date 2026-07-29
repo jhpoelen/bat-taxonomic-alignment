@@ -133,8 +133,14 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
   document.querySelector("#pallette").append(palletteFragment);
 
-  var isSameName = function(nameA, nameB) { 
-    return nameA === nameB;
+  var isSameName = function(nameA, nameB) {
+
+    let normalizeNAs = function(name) { 
+       let synonym = name || name.replace(/.*synonym of.*/, "N/A");
+       return synonym || synonym.replace("/[ ]*/,"N/A");
+    }
+
+    return normalizeNAs(nameA) === normalizeNAs(nameB_synonymBeNA);
   }
 
   const heatmapFragment = new DocumentFragment();
