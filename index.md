@@ -137,7 +137,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
     let normalizeNAs = function(name) { 
        let synonym = name || name.replace(/.*synonym of.*/, "N/A");
-       return synonym || synonym.replace("/[ ]*/,"N/A");
+       return synonym || synonym.replace(/[ ]*/,"N/A");
     }
 
     return normalizeNAs(nameA) === normalizeNAs(nameB_synonymBeNA);
