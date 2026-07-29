@@ -145,9 +145,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
        }
     }
 
-    let isSameName = normalizeNAs(nameA) === normalizeNAs(nameB);
-    console.log(nameA + " and " + nameB + " are " + (isSameName ? "the same" : "not the same"));
-    return isSameName;
+    return normalizeNAs(nameA) === normalizeNAs(nameB);
   }
 
   const heatmapFragment = new DocumentFragment();
