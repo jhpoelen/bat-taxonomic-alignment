@@ -82,16 +82,18 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
   var authorities = {{ site.data.authorities | jsonify }};
 
   var references = document.querySelector("#references");
-  
+
+  var referenceList = references.appendChild(document.createElement("ul")); 
+ 
   authorities.forEach(function(authority) {
-    let referenceElem = references.appendChild(document.createElement("div"));
+    let referenceElem = referenceList.appendChild(document.createElement("li"));
     referenceElem.setAttribute("id", authority.authorityCode);
     let elemType = authority.zenodoDoi == null ? "div" : "a";
-    let reference = references.appendChild(document.createElement(elemType));
+    let reference = referenceElem.appendChild(document.createElement(elemType));
     reference.appendChild(document.createElement("div")).textContent = (authority.authorityCode + " " + authority.zenodoDoi);
     reference.setAttribute("href", authority.zenodoDoi);
     reference.setAttribute("id", authority.authorityCode);
-    let data = references.appendChild(document.createElement("a"));
+    let data = referenceElem.appendChild(document.createElement("a"));
     data.appendChild(document.createElement("div")).textContent = ("data: " + authority.filename + "with signature " + authority.signature);
     data.setAttribute("href", "sources/" + encodeURI(authority.filename));
   });
