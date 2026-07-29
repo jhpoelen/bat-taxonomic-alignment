@@ -94,7 +94,7 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
     reference.setAttribute("href", authority.zenodoDoi);
     reference.setAttribute("id", authority.authorityCode);
     let data = referenceElem.appendChild(document.createElement("a"));
-    data.appendChild(document.createElement("div")).textContent = ("data: " + authority.filename + "with signature " + authority.signature);
+    data.appendChild(document.createElement("div")).textContent = ("data: " + authority.filename + " with signature " + authority.signature);
     data.setAttribute("href", "sources/" + encodeURI(authority.filename));
   });
 
