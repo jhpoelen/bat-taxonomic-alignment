@@ -137,9 +137,11 @@ Do you have questions or suggestions? Please [edit this page]({{ site.edit_page_
 
     let normalizeNAs = function(name) {
        if (name == undefined) {
-         return name;
+           return name;
+       } else if (name.trim().length == 0) {
+           return "N/A";
        } else {
-         return name.replace(/.*synonym of.*/,"N/A").replace(/^\s*$/, "N/A");
+         return name.replace(/.*synonym of.*/,"N/A");
        }
     }
 
